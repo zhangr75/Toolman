@@ -16,23 +16,40 @@
     </head>
 
     <body>
-        <div id = "signUp">
-        <h1><span class = "TitleSize">Sign Up</span></h1>
-        </div>
+        <div id = "signUpBox">
+            <div id = "signUp">
+            <h1><span class = "TitleSize">Sign Up</span></h1>
+            </div>
 
-        <div id = "InputBox">
+            <!--For future to post information to server sides-->
+            <div id = "InputBox">
+                
+                <label for = "phonenum">Phone Number</label>
+                <br/>
+                <input id = "phonenum" type = "text" name = "Phone Number">
+                <br/>
+
+                <lable for = "email">E-mail Address</lable>
+                <br/>
+                <input id = "email" type = "text" name = "E-Mail Address">
+                <br/>
+
+                <label for = "userpw">Password</label>
+                <br/>
+                <input id = "userpw" type = "password" name = "Userpw">
+                <br/>
             
-            <p>E-mail Address</p>
-            <input type = "text" class = "E-Mail" name = "E-Mail Address">
-            <br/>
-            <p>Password</p>
-            <input type = "password" class = "Password" name = "userpw">
-            <br/>
-            <input type = "submit" value = "submit">
-            <input type = "reset" value = "reset">
-            
+                <label for="male">Male</label>
+                <input id="male" type="radio" name="gender" value="Male">
+                <label for="female">Female</label>
+                <input id="female" type="radio" name="gender" value="Female">
+                
+                <br/><br/>
+                <input id = "submitButton" type = "submit" value = "submit">
+                <input id = "resetButton" type = "reset" value = "reset">
+                
+            </div>
         </div>
-        
     </body>
 
 
