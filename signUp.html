@@ -13,23 +13,36 @@
         <!--link to the external css file-->
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/main.css">
+        <!--Google fonts-->
+        <link href="//fonts.googleapis.com/css?family=Ubuntu+Mono:400italic,400,700italic,700" rel="stylesheet" type="text/css">
+
+        <!--Set where the window should been opened when clicking hyperlink. Open the document in the same window-->
+        <base target = "_self">
     </head>
 
     <body>
-        <div id = "signUpBox">
-            <div id = "signUp">
+        <div id = "header">
+            <div class = "navBar"> 
+                <a href = "newindex.html">To Main Page</a>
+                <a href = "newindex.html">Link2</a>
+                <a href = "newindex.html">Link3</a>
+                <a href = "newindex.html">Link4</a>
+            </div>
+        </div>
+        <div class = "borderForInputs">
+            <div class = "captionForInoutBoxes">
             <h1><span class = "TitleSize">Sign Up</span></h1>
             </div>
 
             <!--For future to post information to server sides-->
-            <div id = "InputBox">
+            <div class = "InputBox">
                 
                 <label for = "phonenum">Phone Number</label>
                 <br/>
                 <input id = "phonenum" type = "text" name = "Phone Number">
                 <br/>
 
-                <lable for = "email">E-mail Address</lable>
+                <label for = "email">E-mail Address</label>
                 <br/>
                 <input id = "email" type = "text" name = "E-Mail Address">
                 <br/>
@@ -56,6 +69,11 @@
                 <input id = "resetButton" type = "reset" value = "reset">
                 
             </div>
+            
+        </div>
+
+        <div id = "footer">
+
         </div>
     </body>
 

@@ -1,4 +1,4 @@
-#navBar{
+#header{
 	height: 110px;
 	margin: auto;
   	width: 100%;
@@ -9,6 +9,28 @@
   	border-bottom-style: outset;
 }
 
+.navBar{
+	margin-right: auto;
+	text-align: center;
+}
+
+.navBar a:link{
+	color:lightcoral;
+	background-color: transparent;
+}
+
+.navBar a:visited{
+	color:green;
+	background-color: transparent;
+}
+.navBar a:hover{
+	color:black;
+	background-color: transparent;
+}
+.navBar a:active{
+	color:lightblue;
+	background-color: transparent;
+}
 #searchbox{
 	margin-left: 40%;
   	width: 40%;
@@ -47,10 +69,10 @@
 }
 
 #leftside{
-	line-height:30px;
+	line-height:120%;
     background-color:#eeeeee;
     height: 100%;
-    width:600px;
+    width:30%;
     float:left;
     padding:5px;
 }
@@ -79,7 +101,7 @@
 }
 
 /*Make inputs looks like in one box, set margin around the box, and set the padding inside the box*/
-#signUpBox{
+.borderForInputs{
 
 	margin-left: 35%;
 	margin-right: 35%;
@@ -89,7 +111,7 @@
 	border-collapse: collapse;
 
 }
-#signUp {
+.captionForInoutBoxes {
 	font-size: 160%;
 	margin-top: auto;
 	text-align: center;
@@ -97,23 +119,8 @@
 	
 }
 
-#logInBox{
-	margin-left: 35%;
-	margin-right: 35%;
-	margin-top: 100px;
-	padding: 10px;
-	border: 1px solid black;
-	border-collapse: collapse;
-}
-#logIn {
-	font-size: 160%;
-	margin-top: auto;
-	text-align: center;
-	color: tomato;
-	
-}
 
-#InputBox {
+.InputBox {
 	margin-top: auto;
 	padding-top: 25px;
 	text-align: center;

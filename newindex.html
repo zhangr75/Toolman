@@ -8,39 +8,49 @@
     
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/main.css">
-    <base target = "_blank">
+
+    <!--Set where the window should been opened when clicking hyperlink. Open the document in the same window-->
+    <base target = "_self">
 </head>
 <body>
         <!--navBar, bottom. left side are for define different parts of web page-->
-        <div id="navBar">
-            <div id="searchbox">
-            <input type="text" class ="tosearch" placeholder="Restaurants">
-            <select name="rating" class="todrop">
-            	<option selected disabled>Rating</option>
-			    <option value="1star">1 star</option>
-			    <option value="2star">2 star</option>
-			    <option value="3star">3 star</option>
-			    <option value="4star">4 star</option>
-			    <option value="5star">5 star</option>
-		  	</select>
-            <button class="searchbutton">Search</button>
-            </div>
-
-            <div id="regpart">
-            <!--make buttons as the hyperlink to another page for log in or sign up-->
-            <a href = "logIn.html"><button type="button" class="reg">Log In</button></a>
-            <a href = "signUp.html"><button type="button" class="reg">Sign Up</button></a>
-            </div>
+    <div id="header">
+        <div id="searchbox">
+        <input type="text" class ="tosearch" placeholder="Restaurants">
+        <select name="rating" class="todrop">
+            <option selected disabled>Rating</option>
+			<option value="1star">1 star</option>
+			<option value="2star">2 star</option>
+			<option value="3star">3 star</option>
+			<option value="4star">4 star</option>
+			<option value="5star">5 star</option>
+		</select>
+        <button class="searchbutton">Search</button>
         </div>
+
+        <div id="regpart">
+        <!--make buttons as the hyperlink to another page for log in or sign up-->
+        <a href = "logIn.html"><button type="button" class="reg">Log In</button></a>
+        <a href = "signUp.html"><button type="button" class="reg">Sign Up</button></a>
+        </div>
+    </div>
     <div id = "bottom">
-    <div id="leftside">
-        
+        <div id="leftside">
+            
+        </div>
+
+        <div id="map">
+            <img src="images/map.png" id="img1" width="2500" height="2000" alt = "map">
+
+            <!--Use this image as the hyperlink to access object page-->
+            <a href = "individualObjectPage.html">
+            <img src="images/coordinate.jpeg" id="img2" width="50" height="60" alt = "coordinate">
+            </a>
+        </div>
     </div>
 
-    <div id="map">
-        <img src="images/map.png" id="img1" width="2500" height="2000">
-        <img src="images/coordinate.jpeg" id="img2" width="50" height="60">
-    </div>
+    <div id = "footer">
+
     </div>
 
 
