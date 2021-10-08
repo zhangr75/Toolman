@@ -1,4 +1,5 @@
 #header{
+	padding-top: 10px;
 	height: 110px;
   	width: 100%;
 
@@ -74,14 +75,25 @@
 	float: left;
 	height: 100%;
   width: 40%;
-  background-color: lightblue;
+  background-color: lightgrey;
 }
 
 #map{
+	background-image: url('images/map.png');
 	height: 100%;
   width:60%;
-  background-color: lightgreen;
   float: right;
+}
+
+#movingbutton{
+	width: 130px;
+  position: fixed;
+  z-index: 1;
+  top: 20px;
+  left: 10px;
+  background: #eee;
+  overflow-x: hidden;
+  padding: 8px 0;
 }
 
 .footer{
@@ -101,6 +113,7 @@
 
 /*Make inputs looks like in one box, set margin around the box, and set the padding inside the box*/
 .borderForInputs{
+	width: 30%;
 
 	margin-left: 35%;
 	margin-right: 35%;
@@ -115,11 +128,11 @@
 	margin-top: auto;
 	text-align: center;
 	color: tomato;
-	
 }
 
 
 .InputBox {
+	width: 100%;
 	margin-top: auto;
 	padding-top: 25px;
 	text-align: center;
@@ -132,5 +145,4 @@
 		height: 40px;
 		text-align: center;
 		clear: none;
-		background-color: darkgray;
 }
