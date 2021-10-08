@@ -5,7 +5,6 @@
 	<title>CS4WW4 Project</title>
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale = 1.0">
-    
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/main.css">
 
@@ -30,28 +29,30 @@
 
         <div id="regpart">
         <!--make buttons as the hyperlink to another page for log in or sign up-->
-        <a href = "logIn.html"><button type="button" class="reg">Log In</button></a>
-        <a href = "signUp.html"><button type="button" class="reg">Sign Up</button></a>
+        <form>        
+        <button formaction = "logIn.html" type="submit" class="reg">Log In</button>
+        <button formaction = "signUp.html"type="submit" class="reg">Sign Up</button>
+        </form>
+
         </div>
     </div>
-    <div id = "bottom">
-        <div id="leftside">
-            
+    <div class="bottom">
+        <div class="leftside">
+            <p>left side</p>
         </div>
 
         <div id="map">
-            <img src="images/map.png" id="img1" width="2500" height="2000" alt = "map">
+            <a href = "individualObjectPage.html"><img src="images/map.png" id="img1" width="2000" height="1300" alt = "map"></a>
 
             <!--Use this image as the hyperlink to access object page-->
-            <a href = "individualObjectPage.html">
-            <img src="images/coordinate.jpeg" id="img2" width="50" height="60" alt = "coordinate">
-            </a>
         </div>
     </div>
 
-    <div id = "footer">
-
+    <div class="footer">
+        <p>Author: Run Zhang, Boming Jin &copy 2021-10-08</p>
     </div>
+
+
 
 
 
