@@ -107,9 +107,11 @@
 	height: 100%;
   	width:70%;
   	float: right;
+}
+.map{
+	float: right;
 
 }
-
 #textbox {
     display: none;
     border:1px solid #000;
@@ -178,7 +180,12 @@ a:hover + #textbox {
 }
 
 
-/*Less than 1024px will apply those settings to specific classes/id/elements*/
+.searchresult{
+	width: 30%;
+	padding-left: 50px;
+	text-align: center;
+
+}
 @media only screen and (max-width:1024px) {
 	/* For tablets: */
 	.borderForInputs, #map, .leftside {
@@ -189,18 +196,11 @@ a:hover + #textbox {
 	}
 	.header{
 		padding-top: 40px;
-	}
-	#searchbox{
-		margin: auto;
 
-	}
-	.tosearch{
-		width: auto;
 	}
 	
 }
 
-/*Less than 375px will apply those settings to specific classes/id/elements*/
 @media only screen and (max-width:375px) {
 	/* For mobile phones: */
 	#map, .leftside {
@@ -216,12 +216,10 @@ a:hover + #textbox {
 		padding-top: 40px;
 
 	}
-
 	
 }
 
-/*Less than 320px will apply those settings to specific classes/id/elements*/
-@media only screen and (max-width:320px) {
+  @media only screen and (max-width:320px) {
 	/* For mobile phones: */
 	#map, .leftside {
 
