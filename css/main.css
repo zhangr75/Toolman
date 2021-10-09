@@ -56,7 +56,6 @@
 }
 
 .searchbutton{
-	background-image: url("images/search.jpeg");
 	margin-left: 10%;
 	margin-top: 10px;
 	border-radius: 15px;
@@ -76,8 +75,9 @@
 
 .rightside{
 	width: 70%;
-	height: 100%;
 	float: right;
+	height: 100%;
+
 }
 
 #yummy{
@@ -119,11 +119,9 @@ a:hover + #textbox {
     display: block;
 }
 .movingbtn {
-	padding-bottom: 40px;
 	position: fixed; 
 	float: left;
 	bottom: 0;
-
 }
 
 
@@ -188,7 +186,7 @@ a:hover + #textbox {
 /*Apply new settings to elements/classes/ids when screen width below 1024px*/
 @media only screen and (max-width:1024px) {
 	/* For tablets: */
-	.borderForInputs, #map, .leftside {
+	.borderForInputs{
 		margin-left:10%;
 		margin-right: 10%;
 		margin-top: 20px;
@@ -196,20 +194,19 @@ a:hover + #textbox {
 	}
 	.header{
 		padding-top: 40px;
+		height: 170px;;
 
 	}
 
 	#searchbox{
-		margin: auto;
+		margin-left: auto;
 	}
-	
-}
+}	
 
 /*Apply new settings to elements/classes/ids when screen width below 375px*/
 @media only screen and (max-width:375px) {
 	/* For mobile phones: */
-	#map, .leftside {
-
+	.leftside, .rightside {
 		width: 100%;
 	}
 	.borderForInputs {
@@ -221,6 +218,17 @@ a:hover + #textbox {
 		padding-top: 40px;
 
 	}
+
+	#regpart{
+		font-size: 8px;
+	}
+	.tosearch{
+		width: 200px;
+	}
+	.searchbutton{
+		width: 150px;
+	}
+
 
 	
 	
@@ -229,12 +237,9 @@ a:hover + #textbox {
 /*Apply new settings to elements/classes/ids when screen width below 320px*/
 @media only screen and (max-width:320px) {
 	/* For mobile phones: */
-	#map, .leftside {
 
-		width: 100%;
-	}
 	.borderForInputs {
-		width:100%
+		width:100%;
 	}
 	.header{
 		padding-top: 40px;
