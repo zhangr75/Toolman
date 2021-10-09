@@ -5,6 +5,7 @@
 	<title>CS4WW4 Project</title>
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale = 1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/main.css">
 
@@ -15,7 +16,7 @@
         <!--navBar, bottom. left side are for define different parts of web page-->
     <div class="header">
         <div id="searchbox">
-        <input type="text" class ="tosearch" placeholder="Restaurants">
+        <input type="text" class ="tosearch" placeholder="Restaurant...">
         <select name="rating" class="todrop">
             <option selected disabled>Rating</option>
 			<option value="1star">1 star</option>
@@ -24,7 +25,7 @@
 			<option value="4star">4 star</option>
 			<option value="5star">5 star</option>
 		</select>
-        <button class="searchbutton">Search</button>
+        <button type="submit" class="searchbutton">Search</button>
         </div>
 
         <div id="regpart">
@@ -38,14 +39,31 @@
     </div>
     <div class="bottom">
         <div class="leftside">
-            <p>left side</p>
+             <div class="movingbtn"> 
+                <a href = "submissionpage.html"><button type="submit" class="newobj">Add</button></a>
+            </div>
+            <h3>Top 10 restaurant near you!</h3> 
+            <a href = "individualObjectPage.html"><div id="yummy">
+                <img src="images/yummy.jpeg" id="yummyimg">
+                <div class="ratestar">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+            </div></a>
+
+            </div>   
+
         </div>
 
         <div id="map" style="background-image: url('images/map.png')">
-            <!-- <a href = "individualObjectPage.html"><img src="images/map.png" id="img1" width="2000" height="1300" alt = "map"></a> -->
+            <a href = "individualObjectPage.html"><img src="images/geolocation.jpeg" id="geolocation"  alt = "geolocation"></a>
             <!--Use this image as the hyperlink to access object page-->
-             <button id="moveingbutton" formaction = "logIn.html" type="submit" class="reg">Log In</button>
-        </div>
+            <div id="textbox">
+                <h3>Yummy Restaurant</h3>
+            </div>
+            </div>
     </div>
 
     <div class="footer">

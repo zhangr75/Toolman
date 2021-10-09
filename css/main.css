@@ -58,6 +58,7 @@
 }
 
 .searchbutton{
+	background-image: url("images/search.jpeg");
 	margin-left: 10%;
 	margin-top: 10px;
 	border-radius: 15px;
@@ -74,27 +75,61 @@
 .leftside{
 	float: left;
 	height: 100%;
-  	width: 40%;
-  	background-color: lightgrey;
+  	width: 30%;
+  }
+
+#yummy{
+	pedding-top: 100px;
+	width: 90%;
+	margin: auto;
+  	border: 3px solid lightgrey;
+  	box-shadow: 5px 8px lightslategrey;
+  	padding: 10px;
+
+}
+#yummyimg{
+	display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+}
+
+.ratestar{
+	padding-left: 25px;
+}
+.checked {
+  color: red;
 }
 
 #map{
 	background-image: url('images/map.png');
 	height: 100%;
-  	width:60%;
+  	width:70%;
   	float: right;
+
 }
 
-#movingbutton{
-	width: 130px;
-  	position: fixed;
-  	z-index: 1;
-  	top: 20px;
-  	left: 10px;
-  	background: #eee;
-  	overflow-x: hidden;
-  	padding: 8px 0;
+#textbox {
+    display: none;
+    border:1px solid #000;
+    height:30px;
+    width:250px;
+    margin-left:480px;
+    background-color: ghostwhite;
 }
+
+a:hover + #textbox {
+    display: block;
+}
+.movingbtn {
+	position: fixed; 
+	float: left;
+	bottom: 0;
+	background: red;
+}
+
 
 .footer{
 	padding-top: 10px;
@@ -136,6 +171,13 @@
 	padding-top: 25px;
 	text-align: center;
 	
+}
+
+#geolocation{
+	width: 100px;
+	height: 100px;
+	margin-top: 450px;
+	margin-left: 540px;
 }
 
 
