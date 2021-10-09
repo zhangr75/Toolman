@@ -76,7 +76,8 @@
 
 .rightside{
 	width: 70%;
-	float: left;
+	height: 100%;
+	float: right;
 }
 
 #yummy{
@@ -104,14 +105,7 @@
   color: red;
 }
 
-/*
-#map{
-	
-}*/
-.map{
-	float: right;
 
-}
 #textbox {
     display: none;
     border:1px solid #000;
@@ -125,19 +119,24 @@ a:hover + #textbox {
     display: block;
 }
 .movingbtn {
+	padding-bottom: 40px;
 	position: fixed; 
 	float: left;
 	bottom: 0;
-	background: red;
+
 }
 
 
 .footer{
+	position: fixed;
+	bottom: 0;
 	padding-top: 10px;
 	width: 100%;
 	height: 40px;
 	text-align: center;
 	clear: none;
+	border-top: 1px solid black;
+	background-color: white;
 }
 
 
@@ -175,8 +174,7 @@ a:hover + #textbox {
 #geolocation{
 	width: 100px;
 	height: 100px;
-	margin-top: 450px;
-	margin-left: 540px;
+	margin: 50%;
 }
 
 
