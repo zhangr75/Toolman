@@ -65,17 +65,19 @@
 	height: 30px
 }
 
-.bottom{
-	width: 100%;
-	height: 1300px;
-}
+
 
 .leftside{
 	text-align: center;
 	float: left;
-	height: 100%;
   	width: 30%;
-  }
+	background-color: white;
+}
+
+.rightside{
+	width: 70%;
+	float: left;
+}
 
 #yummy{
 	padding-top: 100px;
@@ -88,11 +90,11 @@
 }
 #yummyimg{
 	display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 90%;
-  border: 1px solid lightgrey;
-  border-radius: 5px;
+  	margin-left: auto;
+  	margin-right: auto;
+ 	width: 90%;
+  	border: 1px solid lightgrey;
+  	border-radius: 5px;
 }
 
 .ratestar{
@@ -102,12 +104,10 @@
   color: red;
 }
 
+/*
 #map{
-	background-image: url('images/map.png');
-	height: 100%;
-  	width:70%;
-  	float: right;
-}
+	
+}*/
 .map{
 	float: right;
 
@@ -115,7 +115,7 @@
 #textbox {
     display: none;
     border:1px solid #000;
-    height:30px;
+    height:auto;
     width:250px;
     margin-left:480px;
     background-color: ghostwhite;
@@ -186,6 +186,8 @@ a:hover + #textbox {
 	text-align: center;
 
 }
+
+/*Apply new settings to elements/classes/ids when screen width below 1024px*/
 @media only screen and (max-width:1024px) {
 	/* For tablets: */
 	.borderForInputs, #map, .leftside {
@@ -198,9 +200,14 @@ a:hover + #textbox {
 		padding-top: 40px;
 
 	}
+
+	#searchbox{
+		margin: auto;
+	}
 	
 }
 
+/*Apply new settings to elements/classes/ids when screen width below 375px*/
 @media only screen and (max-width:375px) {
 	/* For mobile phones: */
 	#map, .leftside {
@@ -216,10 +223,13 @@ a:hover + #textbox {
 		padding-top: 40px;
 
 	}
+
+	
 	
 }
 
-  @media only screen and (max-width:320px) {
+/*Apply new settings to elements/classes/ids when screen width below 320px*/
+@media only screen and (max-width:320px) {
 	/* For mobile phones: */
 	#map, .leftside {
 
