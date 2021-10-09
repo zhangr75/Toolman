@@ -1,4 +1,4 @@
-#header{
+.header{
 	padding-top: 10px;
 	height: 110px;
   	width: 100%;
@@ -42,28 +42,28 @@
 
 .tosearch{
 	border: none;
-	  border-bottom-style: solid;
-  		border-bottom-color: lightslategrey;
-  		border-width: 2px;
-	  width: 250px; 
-	  height: 50px
+	border-bottom-style: solid;
+  	border-bottom-color: lightslategrey;
+  	border-width: 2px;
+	width: 250px; 
+	height: 50px
 }
 
 .todrop{
 	border: none;
 	border-left-style: solid;
   	border-left-color: coral;
-	  width: 80px; 
-	  height: 30px
+	width: 80px; 
+	height: 30px
 }
 
 .searchbutton{
-	  margin-left: 10%;
-	  margin-top: 10px;
-	  border-radius: 15px;
-	  border-bottom-style: outset;
-	  width: 200px; 
-	  height: 30px
+	margin-left: 10%;
+	margin-top: 10px;
+	border-radius: 15px;
+	border-bottom-style: outset;
+	width: 200px; 
+	height: 30px
 }
 
 .bottom{
@@ -74,26 +74,26 @@
 .leftside{
 	float: left;
 	height: 100%;
-  width: 40%;
-  background-color: lightgrey;
+  	width: 40%;
+  	background-color: lightgrey;
 }
 
 #map{
 	background-image: url('images/map.png');
 	height: 100%;
-  width:60%;
-  float: right;
+  	width:60%;
+  	float: right;
 }
 
 #movingbutton{
 	width: 130px;
-  position: fixed;
-  z-index: 1;
-  top: 20px;
-  left: 10px;
-  background: #eee;
-  overflow-x: hidden;
-  padding: 8px 0;
+  	position: fixed;
+  	z-index: 1;
+  	top: 20px;
+  	left: 10px;
+  	background: #eee;
+  	overflow-x: hidden;
+  	padding: 8px 0;
 }
 
 .footer{
@@ -114,7 +114,7 @@
 /*Make inputs looks like in one box, set margin around the box, and set the padding inside the box*/
 .borderForInputs{
 	width: 30%;
-
+	min-width: 300px;
 	margin-left: 35%;
 	margin-right: 35%;
 	margin-top: 100px;
@@ -132,17 +132,25 @@
 
 
 .InputBox {
-	width: 100%;
 	margin-top: auto;
 	padding-top: 25px;
 	text-align: center;
 	
-	
 }
 
-#footer {
-		width: 100px;
-		height: 40px;
-		text-align: center;
-		clear: none;
-}
+
+
+@media only screen and (max-width:961px) {
+	/* For tablets: */
+	.InputBox, #map, .leftside {
+		width: 100%;
+	}
+	
+  }
+
+@media only screen and (max-width:320px) {
+	/* For mobile phones: */
+	.InputBox, .header, #map, .footer, .leftside {
+		width: 100%;
+	}
+  }
