@@ -147,14 +147,12 @@ a:hover + #textbox {
 
 /*Make inputs looks like in one box, set margin around the box, and set the padding inside the box*/
 .borderForInputs{
-	width: 30%;
 	min-width: 300px;
 	margin-left: 35%;
 	margin-right: 35%;
 	margin-top: 100px;
 	padding: 10px;
 	border: 1px solid black;
-	border-collapse: collapse;
 
 }
 .captionForInoutBoxes {
@@ -181,17 +179,50 @@ a:hover + #textbox {
 
 
 
-@media only screen and (max-width:961px) {
+@media only screen and (max-width:1024px) {
 	/* For tablets: */
-	.InputBox, #map, .leftside {
-		width: 100%;
+	.borderForInputs, #map, .leftside {
+		margin-left:10%;
+		margin-right: 10%;
+		margin-top: 20px;
+		
+	}
+	.header{
+		padding-top: 40px;
+
 	}
 	
-  }
+}
 
 @media only screen and (max-width:375px) {
 	/* For mobile phones: */
-	.InputBox, #map, .leftside {
+	#map, .leftside {
+
 		width: 100%;
 	}
-  }
+	.borderForInputs {
+		margin-left:10%;
+		margin-right: 10%;
+		margin-top: 20px;
+	}
+	.header{
+		padding-top: 40px;
+
+	}
+	
+}
+
+  @media only screen and (max-width:320px) {
+	/* For mobile phones: */
+	#map, .leftside {
+
+		width: 100%;
+	}
+	.borderForInputs {
+		width:100%
+	}
+	.header{
+		padding-top: 40px;
+
+	}
+}
