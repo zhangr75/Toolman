@@ -118,9 +118,11 @@ a:hover + #textbox {
     display: block;
 }
 .movingbtn {
+	background-color: darkred;
 	position: fixed; 
 	float: left;
-	bottom: 10;
+	bottom: 0;
+	padding-bottom: 40px;
 }
 
 
