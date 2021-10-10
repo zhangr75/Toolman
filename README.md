@@ -1,8 +1,11 @@
 # Toolman
 •Course name: Web Computing and Web Systems
 •Group name: Toolman
-•Member 1: Run Zhang
-•Member 2: Boming Jin
+•Member 1: Run Zhang (zhangr75)
+•Member 2: Boming Jin (jinb5)
+•Live Server: http://3.13.254.133/
+
+We did all add-on tasks
 
 Answer for HTML picture and source tag
 i). <picture>
@@ -22,7 +25,9 @@ of lower resolution devices (e.g., mobile devices).
 2.In most cases, we need to handle resolution switching and artwork at the same time, then the 
 picture tag is the best choice.
 3.Img tags result in longer image loading times and top-to-bottom image loading piece by piece.
+4.We could store images in a landscape orientation or portrait orientation for future needs. Which makes
+the site looks good.
 
 iii).
-The advantage of the Img tag is that usually the browser can leave the appropriate height and 
-width space before the image is loaded, which in some cases is beneficial for layout.
+When we are using <picture> and <source> tags, we need to store more pictures than we showed on the site,
+so that will waste space to store those images. Because of that, we could use fewer pictures or using links to get the image.
