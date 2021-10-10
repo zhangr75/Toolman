@@ -76,7 +76,6 @@
 .rightside{
 	width: 70%;
 	float: right;
-	height: 100%;
 
 }
 
@@ -118,13 +117,10 @@
 a:hover + #textbox {
     display: block;
 }
-
 .movingbtn {
-	background-color: darkred;
 	position: fixed; 
 	float: left;
-	bottom: 0;
-	padding-bottom: 40px;
+	bottom: 10;
 }
 
 
@@ -203,6 +199,9 @@ a:hover + #textbox {
 
 	#searchbox{
 		margin-left: auto;
+	}
+	.footer{
+		width: 100%;
 	}
 }	
 
