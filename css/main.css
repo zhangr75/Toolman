@@ -1,6 +1,13 @@
+html, body{
+    margin:0;
+    padding:0;
+    height: 100%;
+	width:100%;
+}
+
 .header{
 	padding-top: 10px;
-	height: 110px;
+	height: 15%;
   	width: 100%;
   	border-bottom-style: outset;
 }
@@ -67,26 +74,31 @@
 
 
 .leftside{
+	position: absolute;
 	border:  1px solid black;
 	text-align: center;
-	position: absolute;
 	float: left;
   	width: 30%;
 	background-color: white;
-	overflow-y: auto;
-	max-height: 100%;
-	height:auto;
+	overflow-y: scroll;
+	height:85%;
 	
 }
 .leftside::-webkit-scrollbar {
-  display: none;
+  	display: none;
 }
+
+.rightside{
+	width: 70%;
+	height:85%;
+	float:right;
+}
+
 
 #map{
 	border: 1px solid black;
-	width: 70%;
-	float: right;
-	height: 1080px;
+	width: 100%;
+	height: 85vh;
 }
 
 #yummy{
@@ -132,7 +144,6 @@ a:hover + #textbox {
 	position: fixed; 
 	float: left;
 	bottom: 0;
-	padding-bottom: 40px;
 }
 
 
@@ -204,8 +215,12 @@ a:hover + #textbox {
 	}
 	.header{
 		padding-top: 40px;
-		height: 170px;;
+		height: 18%;
 
+	}
+
+	.leftside, .rightside{
+		height:82%;
 	}
 
 	#searchbox{
