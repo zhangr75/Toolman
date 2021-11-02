@@ -67,16 +67,24 @@
 
 
 .leftside{
+	border:  1px solid black;
 	text-align: center;
+	position: absolute;
 	float: left;
   	width: 30%;
 	background-color: white;
+	overflow-y: auto;
+	max-height: 100%;
+	
+}
+.leftside::-webkit-scrollbar {
+  display: none;
 }
 
-.rightside{
+#map{
+	border: 1px solid black;
 	width: 70%;
 	float: right;
-
 }
 
 #yummy{
@@ -127,7 +135,6 @@ a:hover + #textbox {
 
 
 .footer{
-	position: fixed;
 	bottom: 0;
 	padding-top: 10px;
 	width: 100%;
@@ -210,7 +217,7 @@ a:hover + #textbox {
 /*Apply new settings to elements/classes/ids when screen width below 375px*/
 @media only screen and (max-width:375px) {
 	/* For mobile phones: */
-	.leftside, .rightside {
+	.leftside, #map {
 		width: 100%;
 	}
 	.borderForInputs {
