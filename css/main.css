@@ -75,7 +75,6 @@ html, body{
 
 .leftside{
 	position: absolute;
-	border:  1px solid black;
 	text-align: center;
 	float: left;
   	width: 30%;
@@ -96,7 +95,6 @@ html, body{
 
 
 #map{
-	border: 1px solid black;
 	width: 100%;
 	height: 85vh;
 }
