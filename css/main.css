@@ -4,6 +4,9 @@ html, body{
     height: 100%;
 	width:100%;
 }
+form{
+	display:inline
+}
 
 .header{
 	padding-top: 10px;
@@ -35,15 +38,20 @@ html, body{
 	background-color: transparent;
 }
 #searchbox{
-	margin-left: 40%;
+	margin-left: 30%;
+	margin-right: 30%;
   	width: 40%;
   	float: left;
+	text-align: center;
 
 }
 
-#regpart{
-	float: right;
+#userLocation{
+	display:inline;
+	float:right;
 }
+
+
 
 .tosearch{
 	border: none;
@@ -67,10 +75,17 @@ html, body{
 	margin-top: 10px;
 	border-radius: 15px;
 	border-bottom-style: outset;
-	width: 200px; 
+	width: 75px; 
 	height: 30px
 }
 
+.locationButton{
+	border-radius: 15px;
+	border-bottom-style: outset;
+	width: 80px; 
+	height: 30px;
+	float:right;
+}
 
 
 .leftside{

@@ -1,6 +1,11 @@
+const userLocation = [];
+
+
 function initMap() {
                 var map = new google.maps.Map(document.getElementById("map"),{zoom: 13.5, center: location});
                 var bounds = new google.maps.LatLngBounds();
+
+                
 
                 var location= [
                 /**{
@@ -54,3 +59,35 @@ function initMap() {
                 }
                 // Load initialize function
                 google.maps.event.addDomListener(window, 'load', initMap);
+
+function getLocation(){
+
+    if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(userLoc);
+        
+    }
+    else{
+        document.getElementById("userLocation").innerHTML = "Failed to get the location.";
+    }
+
+}
+
+function userLoc(position){
+
+    userLocation[0] = 'userLocation';
+    userLocation[1] = position.coords.latitude;
+    userLocation[2] = position.coords.longitude;
+
+}
+
+function showLocation(){
+
+    if (!userLocation.length){
+        document.getElementById("userLocation").innerHTML = "Don't know the location right now";
+    }
+    else{
+        document.getElementById("userLocation").innerHTML = userLocation;
+
+    }
+}
+
