@@ -1,12 +1,9 @@
 const userLocation = [];
-
-
 function initMap() {
-                var map = new google.maps.Map(document.getElementById("map"),{zoom: 13.5, center: location});
+                var map = new google.maps.Map(document.getElementById("map"),{zoom: 13.5, center: uluru});
                 var bounds = new google.maps.LatLngBounds();
 
                 
-
                 var location= [
                 /**{
                     "title": 'Coco MilkTea',
@@ -17,7 +14,8 @@ function initMap() {
                 }**/
                 ['Coco MilkTea', 43.2543927046955, -79.86604390141395],
                 ['The Ship', 43.25221779075225, -79.8699729075916]
-                ]
+                ];
+
 
                 var infoWindowContent = [
                 ['<div class="info_content">' +
@@ -27,7 +25,7 @@ function initMap() {
                 '<h3>The Ship</h3>' +
                 '<p>Address: 23 Augusta St, Hamilton, ON L8N 1P2</p>' +
                 '</div>']
-                ]
+                ];
 
                 var infoWindow = new google.maps.InfoWindow(), maker, i;
 
@@ -54,11 +52,14 @@ function initMap() {
 
                     // Center the map
                     map.fitBounds(bounds);
+                    
+                    // Load initialize function
+                    google.maps.event.addDomListener(window, 'load', initMap);
                 }
                 
+                
 }
-// Load initialize function
-google.maps.event.addDomListener(window, 'load', initMap);
+
 
 function getLocation(){
 

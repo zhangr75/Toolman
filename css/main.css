@@ -114,6 +114,11 @@ form{
 	height: 85vh;
 }
 
+#individualMap{
+	width: 100%;
+	height: 85vh;
+}
+
 #yummy{
 	padding-top: 100px;
 	width: 90%;
