@@ -1,6 +1,6 @@
 const userLocation = [];
 function initMap() {
-                var map = new google.maps.Map(document.getElementById("map"),{zoom: 13.5, center: uluru});
+                var map = new google.maps.Map(document.getElementById("map"),{zoom: 13.5, center: location});
                 var bounds = new google.maps.LatLngBounds();
 
                 
