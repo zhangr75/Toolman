@@ -16,6 +16,7 @@
         <!--Google fonts-->
         <link href="//fonts.googleapis.com/css?family=Ubuntu+Mono:400italic,400,700italic,700" rel="stylesheet" type="text/css">
 
+        <!--External JavaScript file-->
         <script src="javascript/index.js"></script>
 
 
@@ -32,21 +33,26 @@
                 <a href = "index.html">Link4</a>
             </div>
         </div>
-        <div class="searchresult">
-        <h1>Best (searchboxtext) near your:</h1>
-        <a href = "individualObjectPage.html"><div id="yummy">
+        <div class="leftside">
+            <h1>Best (searchboxtext) near your:</h1>
+            <a href = "individual_sample.html"> 
+                <div id="yummy">
                 <img src="images/yummy.jpeg" id="yummyimg" alt = "Yummy">
-            </div></a>
-        <br/>
-            <p id = "userLocation"></p>
+                </div></a>
+            <br/>
             <p>Address : Hamilton street west</p>
             <h3>Italian/Spaghetti</h3>  
             <br/>
+            <div class = "footer">
+                    <p>Author: Run Zhang, Boming Jin &copy; 2021-10-08</p>
+            </div>
+        </div>
 
+        <div class = "rightside">
+            <div id="map"></div>
+            <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALMSVQoum8gtfksfpEQ4QcZvMqUt8Vez0&callback=initMap&libraries=&v=weekly"></script>
         </div>
-        <div class = "footer">
-            <p>Author: Run Zhang, Boming Jin &copy; 2021-10-08</p>
-        </div>
+        
     </body>
 
 

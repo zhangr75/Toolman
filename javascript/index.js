@@ -32,33 +32,33 @@ function initMap() {
                 var infoWindow = new google.maps.InfoWindow(), maker, i;
 
                 for( i = 0; i < location.length; i++ ) {
-                var position = new google.maps.LatLng(location[i][1], location[i][2]);
-                bounds.extend(position);
-                marker = new google.maps.Marker({
-                    position: position,
-                    map: map,
-                    title: location[i][0]
-                });
+                    var position = new google.maps.LatLng(location[i][1], location[i][2]);
+                    bounds.extend(position);
+                    marker = new google.maps.Marker({
+                        position: position,
+                        map: map,
+                        title: location[i][0]
+                    });
                 
-                // Add info window to marker    
-                google.maps.event.addListener(marker, 'mouseover', (function(marker, i) {
-                    return function() {
-                        infoWindow.setContent(infoWindowContent[i][0]);
-                        infoWindow.open(map, marker);
-                    }
-                })(marker, i));
+                    // Add info window to marker    
+                    google.maps.event.addListener(marker, 'mouseover', (function(marker, i) {
+                        return function() {
+                            infoWindow.setContent(infoWindowContent[i][0]);
+                            infoWindow.open(map, marker);
+                        }
+                    })(marker, i));
 
-                google.maps.event.addListener(marker, 'mouseout', function(){
+                    google.maps.event.addListener(marker, 'mouseout', function(){
                         infoWindow.close();
                     });
 
-                // Center the map
-                map.fitBounds(bounds);
+                    // Center the map
+                    map.fitBounds(bounds);
                 }
                 
-                }
-                // Load initialize function
-                google.maps.event.addDomListener(window, 'load', initMap);
+}
+// Load initialize function
+google.maps.event.addDomListener(window, 'load', initMap);
 
 function getLocation(){
 

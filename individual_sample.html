@@ -26,6 +26,10 @@
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
 
+        <!--External JavaScript file-->
+        <script src="javascript/index.js"></script>
+
+
         <!--Set where the window should been opened when clicking hyperlink. Open the document in the same window-->
         <base target = "_self">
     </head>
@@ -87,18 +91,17 @@
                 This browser does not support the HTML5 video element.
             </video>
 
-        </div>
-
-        <div>
-            <picture>
-              <source media="(min-width:450px)" srcset="images/loconmap.jpg" >
-              <img src="images/smallloconmap.jpg" alt="map" style = "width: auto;" >
-            </picture>
-
-        </div>
-
-        <div class = "footer">
+            <div class = "footer">
                 <p>Author: Run Zhang, Boming Jin &copy; 2021-10-08</p>
+            </div>
+
         </div>
+
+        <div class = "rightside">
+            <div id="map"></div>
+            <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALMSVQoum8gtfksfpEQ4QcZvMqUt8Vez0&callback=initMap&libraries=&v=weekly"></script>
+        </div>
+
+        
     </body>
 </html>
