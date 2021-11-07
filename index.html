@@ -22,8 +22,6 @@
 
         <!--navBar, bottom. left side are for define different parts of web page-->
     <div class="header">
-        <button onclick= "showLocation()" class="locationButton">Show</button>
-        <button onclick= "getLocation()" class="locationButton">Location</button>
         <div id="searchbox">
             <input type="text" class ="tosearch" placeholder="Restaurant...">
             <select name="rating" class="todrop">
@@ -35,7 +33,7 @@
                 <option value="5star">5 star</option>
             </select>
             <form action="result_sample.html" method="get"><button type="submit" class="searchbutton">Search</button></form>
-            <p id = "userLocation"></p>
+            <button id="currentlocation" onclick="showposition()">Location</button>
   
         </div>
 

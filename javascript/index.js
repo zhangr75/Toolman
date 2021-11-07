@@ -1,7 +1,38 @@
-const userLocation = [];
+var map, marker;
+
 function initMap() {
-                var map = new google.maps.Map(document.getElementById("map"),{zoom: 13.5, center: location});
-                var bounds = new google.maps.LatLngBounds();
+                map = new google.maps.Map(document.getElementById("map"),{
+                    zoom: 13, 
+                    center: {lat:43.24458199937876,  lng: -79.87154251830432}});
+
+                var infoWindow = new google.maps.InfoWindow;
+                marker = new google.maps.Marker({
+                    map: map,
+                });
+            }
+
+    
+
+function showposition(){
+        if(navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    var ll = {
+                      lat: position.coords.latitude,
+                      lng: position.coords.longitude
+                    };
+                    marker.setPosition(ll);
+                    map.setCenter(ll)
+                });
+            }else{
+            alert("Ops, your browser does not support HTML5 geolocation.");
+        }
+  }
+
+
+
+
+
+                /**var bounds = new google.maps.LatLngBounds();
 
                 
                 var location= [
@@ -11,7 +42,7 @@ function initMap() {
                     "lng": '-79.86604390141395',
                     "description": 'asdafwrfqwetfwe'
                     "address": ''
-                }**/
+                }
                 ['Coco MilkTea', 43.2543927046955, -79.86604390141395],
                 ['The Ship', 43.25221779075225, -79.8699729075916]
                 ];
@@ -54,20 +85,18 @@ function initMap() {
                     google.maps.event.addListener(marker, 'mouseout', function(){
                         infoWindow.close();
                     });
-                    **/
+                    *
 
                     // Center the map
                     map.fitBounds(bounds);
                     
                     // Load initialize function
                     google.maps.event.addDomListener(window, 'load', initMap);
-                }
+                }**/
                 
                 
-}
 
-
-function getLocation(){
+/**function getLocation(){
 
     if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition(userLoc);
@@ -96,5 +125,5 @@ function showLocation(){
         document.getElementById("userLocation").innerHTML = userLocation;
 
     }
-}
+}**/
 
