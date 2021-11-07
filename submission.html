@@ -35,42 +35,47 @@
                 <a href = "index.html">Link4</a>
             </div>
         </div>
-        <div class = "borderForInputs">
-            <div class = "captionForInoutBoxes">
-                <h1><span class = "TitleSize">Submission</span></h1>
+
+        <div class = "leftside">
+            <div id = "submission">
+                <div class = "captionForInoutBoxes">
+                    <h1><span class = "TitleSize">Submission</span></h1>
+                </div>
+
+                <!--For future to post information to server sides-->
+                <div class = "InputBox">
+                    <form method = "post" onsubmit= "return ">
+                        <label for = "restaurantname">Restaurant Name</label>
+                        <br/>
+                        <input id = "restaurantname" type = "text" name = "restaurant name" pattern = "[0-9a-zA-Z ]+" required>
+                        <br/>
+
+                        <label for = "description">Description</label>
+                        <br/>
+                        <textarea id = "description" name = "description" rows = "1" cols = "25"></textarea>
+                        <br/>
+
+                        <label for = "coordinates">Coordinates</label>
+                        <br/>
+                        <!--range from -90-90-->
+                        <input id = "coordinates" name = "latitude" placeholder = "latitude" pattern = "-?([0-9](\.\d+)?|[1-8][0-9](\.\d+)?|90)" required>
+                        <!--range from -180-80-->
+                        <input name = "longitude" placeholder = "longitude" pattern = "-?([0-9](\.\d+)?|[1-9][0-9](\.\d+)?|1[0-7][0-9](\.\d+)?|180)" required>
+                        <br/>
+                        <br/>
+                        <label for = "file">Select files: </label>
+                        <input type="file" id="file" name="myfile" multiple>
+                        <br/>
+                        <br/>
+                        <input type = "submit">
+                    </form>
+                </div>
+                
             </div>
 
-            <!--For future to post information to server sides-->
-            <div class = "InputBox">
-                
-                <label for = "restaurantname">Restaurant Name</label>
-                <br/>
-                <input id = "restaurantname" type = "text" name = "restaurant name">
-                <br/>
-
-                <label for = "description">Description</label>
-                <br/>
-                <textarea id = "description" name = "description" rows = "1" cols = "25"></textarea>
-                <br/>
-
-                <label for = "coordinates">Coordinates</label>
-                <br/>
-                <input id = "coordinates" name = "latitude" placeholder="latitude">
-                <input name = "longitude" placeholder="longitude">
-                <br/>
-                <br/>
-                <label for = "file">Select files: </label>
-                <input type="file" id="file" name="myfile" multiple>
-                <br/>
-                <br/>
-                <input type = "submit">
-                
+            <div class = "footer">
+                <p>Author: Run Zhang, Boming Jin &copy; 2021-10-08</p>
             </div>
-            
-        </div>
-
-        <div class = "footer">
-            <p>Author: Run Zhang, Boming Jin &copy; 2021-10-08</p>
         </div>
     </body>
 
