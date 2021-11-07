@@ -220,8 +220,18 @@ a:hover + #textbox {
 	width: 30%;
 	padding-left: 50px;
 	text-align: center;
-
 }
+
+
+input:invalid{
+	background-color: #ffcccc;
+}
+
+input:required{
+	border-color: red;
+	border-width: 1px;
+}
+
 
 /*Apply new settings to elements/classes/ids when screen width below 1024px*/
 @media only screen and (max-width:1024px) {
@@ -240,6 +250,10 @@ a:hover + #textbox {
 
 	.leftside, .rightside{
 		height:82%;
+	}
+
+	#map{
+		height:82vh;
 	}
 
 	#searchbox{

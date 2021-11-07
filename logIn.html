@@ -1,4 +1,4 @@
-<!--Author: Run Zhang, Boming Jin --->
+<!--Author: Run Zhang, Boming Jin -->
 <!DOCTYPE html>
 <html lang = "en">
 
@@ -15,6 +15,9 @@
         <link rel="stylesheet" href="css/main.css">
         <!--Google fonts-->
         <link href="//fonts.googleapis.com/css?family=Ubuntu+Mono:400italic,400,700italic,700" rel="stylesheet" type="text/css">
+
+        <!--External JavaScript file-->
+        <script src="javascript/index.js"></script>
 
         <!--Set where the window should been opened when clicking hyperlink. Open the document in the same window-->
         <base target = "_self">
@@ -36,15 +39,18 @@
 
             <!--For future to retrieving information-->
             <div class = "InputBox">
-                
-                <p>E-mail Address</p>
-                <input type = "text" class = "E-Mail" name = "E-Mail Address" >
-                <br/>
-                <p>Password</p>
-                <input type = "password" class = "Password" name = "userpw">
-                <br/>
-                <input type = "submit" value = "login">
-                
+                <form method = "get" onsubmit = "return validationForLogIn(this);">
+                    <label for = "email">E-mail Address</label>
+                    <br/>
+                    <input id = "email" type = "text" name = "EMailAddress">
+                    <br/>
+                    <label for = "userpw">Password</label>
+                    <br/>
+                    <input id = "userpw" type = "password" name = "Userpw">
+                    <br/>
+                    <input id = "submitButton" type = "submit" value = "submit">
+                    
+                </form>
             </div>
         </div>
 
@@ -55,4 +61,4 @@
 
 
 </html>
-<!--Author: Run Zhang, Boming Jin --->
+<!--Author: Run Zhang, Boming Jin -->
