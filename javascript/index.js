@@ -20,10 +20,14 @@ function initMap() {
                 var infoWindowContent = [
                 ['<div class="info_content">' +
                 '<h3>Coco MilkTea</h3>' +
-                '<p>Address: 96 Main St E, Hamilton, ON L8N 1G3</p>' + '</div>'],
+                '<p>Address: 96 Main St E, Hamilton, ON L8N 1G3</p>' + '</div>'+
+                '<a href = "individual_sample.html"><u>More info</u></a>' +
+                '</div>'],
                 ['<div class="info_content">' +
                 '<h3>The Ship</h3>' +
                 '<p>Address: 23 Augusta St, Hamilton, ON L8N 1P2</p>' +
+                '</div>'+
+                '<a href = "individual_sample.html"><u>More info</u></a>' +
                 '</div>']
                 ];
 
@@ -39,16 +43,18 @@ function initMap() {
                     });
                 
                     // Add info window to marker    
-                    google.maps.event.addListener(marker, 'mouseover', (function(marker, i) {
+                    google.maps.event.addListener(marker, 'click', (function(marker, i) {
                         return function() {
                             infoWindow.setContent(infoWindowContent[i][0]);
                             infoWindow.open(map, marker);
                         }
                     })(marker, i));
 
+                    /**
                     google.maps.event.addListener(marker, 'mouseout', function(){
                         infoWindow.close();
                     });
+                    **/
 
                     // Center the map
                     map.fitBounds(bounds);
