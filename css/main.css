@@ -40,16 +40,21 @@ form{
 #searchbox{
 	margin-left: 30%;
 	margin-right: 30%;
+	padding-top: 30px;
   	width: 40%;
   	float: left;
 	text-align: center;
-
 }
 
-#currentlocation{
-	background: url(images/gps_btn.png) no-repeat;
-	width: 20px;
-	height: 20px;
+#searchbox #currentlocation{
+	background-image: url(images/gps_btn.png);
+	background-repeat: no-repeat;
+  	background-attachment: fixed;  
+  	background-size: cover;
+	position: absolute;
+	margin-top: 15px;
+	width: 25px;
+	height: 25px;
 }
 
 
