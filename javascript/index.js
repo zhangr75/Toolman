@@ -16,12 +16,13 @@ function initMap() {
 function showposition(){
         if(navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(function(position) {
-                    var ll = {
+                    var currentpositon = {
                       lat: position.coords.latitude,
                       lng: position.coords.longitude
                     };
-                    marker.setPosition(ll);
-                    map.setCenter(ll)
+                    marker.setPosition(currentpositon);
+                    map.setCenter(currentpositon, 12.5)
+
                 });
             }else{
             alert("Ops, your browser does not support HTML5 geolocation.");

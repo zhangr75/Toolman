@@ -46,9 +46,10 @@ form{
 
 }
 
-#userLocation{
-	display:inline;
-	float:right;
+#currentlocation{
+	background: url(images/gps_btn.png) no-repeat;
+	width: 20px;
+	height: 20px;
 }
 
 
