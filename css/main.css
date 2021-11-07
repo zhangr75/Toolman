@@ -57,6 +57,11 @@ form{
 	height: 25px;
 }
 
+#regpart{
+	display:inline;
+	position:relative;
+	float:right;
+}
 
 
 .tosearch{
