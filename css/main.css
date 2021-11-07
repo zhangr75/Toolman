@@ -121,6 +121,7 @@ form{
 }
 
 #yummy{
+	display: none;
 	padding-top: 100px;
 	width: 90%;
 	margin: auto;

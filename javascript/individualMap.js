@@ -1,4 +1,4 @@
-const individualLocation = ['The Ship', 43.25221779075225, -79.8699729075916];
+const individualLocation = ['So yummy', 43.25875194676521, -79.84498643707694];
 
 function initMap(){
     

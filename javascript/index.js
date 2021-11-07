@@ -1,4 +1,4 @@
-var map, marker;  //variables to set up map and markers
+var map, marker, infoWindow;  //variables to set up map and markers
 
 
 //Initialize the Google Map API
@@ -8,7 +8,7 @@ function initMap() {
         zoom: 13, 
         center: {lat:43.24458199937876,  lng: -79.87154251830432}});
 
-        var infoWindow = new google.maps.InfoWindow;
+        infoWindow = new google.maps.InfoWindow;
 
         //set up marker object
         marker = new google.maps.Marker({
@@ -32,6 +32,28 @@ function showposition(){
     else{
         alert("Ops, your browser does not support HTML5 geolocation.");
     }
+}
+
+function showresult(){
+    document.getElementById('yummy').style.display = "block";
+    var searchexample = 
+                '<div class="info_content">' +
+                '<h3>So yummy</h3>' +
+                '<a href = "individual_sample.html"><u>More info</u></a>' +
+                '</div>';
+
+    var examplemarker = {
+        lat: 43.25875194676521, 
+        lng: -79.84498643707694
+    };
+    marker.setPosition(examplemarker);//set the location of marker
+    map.setCenter(examplemarker, 9)//reset the centre of the map
+
+    google.maps.event.addListener(marker,'click', function() {
+        infoWindow.setContent(searchexample);
+        infoWindow.open(map, marker);
+        });
+
 }
 
 //Check the validation of the input this is the aggregate function
