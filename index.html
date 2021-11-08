@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<!--Author: Run Zhang, Boming Jin --->
-<html>
+<!--Author: Run Zhang, Boming Jin -->
+<html lang = "en">
 <head>
 	<title>CS4WW4 Project</title>
 	<meta charset="UTF-8">
@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/main.css">
+    
+    <!--Animation Library-->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
 
     <!--External JavaScript file-->
     <script src="javascript/index.js"></script>
@@ -42,7 +48,7 @@
                 <option value="4star">4 star</option>
                 <option value="5star">5 star</option>
             </select>
-            <image id = "currentlocation" src = "images/gps_btn.png" alt = "GPS button" onclick= "showposition()">
+            <img id = "currentlocation" src = "images/gps_btn.png" alt = "GPS button" onclick= "showposition()" title = "Find your location">
             <button type="submit" class="searchbutton" onclick="showresult()">Search</button>
         </div>
     </div>
