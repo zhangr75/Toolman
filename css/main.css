@@ -18,7 +18,7 @@ form{
 .navBar{
 	margin-right: auto;
 	text-align: center;
-	animation: fadeInDownBig;
+	animation: fadeInDown;
 	animation-duration: 1s;
 }
 
