@@ -4,6 +4,7 @@
 •Member 1: Run Zhang (zhangr75)
 •Member 2: Boming Jin (jinb5)
 •Live Server: http://3.13.254.133/
+              https://zhangr75.github.io/Toolman/
 
 All .js files are in javascript folder.
 All media files are in images folder.
