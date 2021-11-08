@@ -38,7 +38,7 @@ function showposition(){
 
 function showresult(){
     document.getElementById('yummy').style.display = "block";
-    document.getElementById("yummy").style.animation = "fadeInLeft 0.5s linear 1";
+    document.getElementById('yummy').style.animation = "fadeInLeft 0.5s linear 1";
     var searchexample = 
                 '<div class="info_content">' +
                 '<h3>So yummy</h3>' +
