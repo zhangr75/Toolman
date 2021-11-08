@@ -187,7 +187,12 @@ form{
   	border: 3px solid lightgrey;
   	box-shadow: 5px 8px lightslategrey;
   	padding: 10px;
+}
 
+#yummy:hover{
+	animation: pulse;
+  	animation-duration: 2s;
+  	animate-repeat: 5;
 }
 #yummyimg{
 	display: block;
@@ -219,7 +224,6 @@ a:hover + #textbox {
     display: block;
 }
 .movingbtn {
-	background-color: darkred;
 	position: fixed; 
 	float: left;
 	bottom: 0;
