@@ -336,17 +336,32 @@ input:required{
 
 /*Apply new settings to elements/classes/ids when screen width below 375px*/
 @media only screen and (max-width:375px) {
+
 	/* For mobile phones: */
-	.leftside, #map {
+	.leftside, .rightside {
 		width: 100%;
+		position:absolute;
 	}
+
+
+	.rightside{
+		display: none;
+	}
+
+	#searchbox{
+		text-align: left;
+		padding-top: 0;
+		margin-right:0;
+		width:200px;
+	}
+
 	.borderForInputs {
 		margin-left:10%;
 		margin-right: 10%;
 		margin-top: 20px;
 	}
 	.header{
-		padding-top: 40px;
+		padding-top: 5px;
 
 	}
 
@@ -354,26 +369,9 @@ input:required{
 		font-size: 8px;
 	}
 	.tosearch{
-		width: 200px;
+		width: 100px;
 	}
 	.searchbutton{
-		width: 150px;
-	}
-
-
-	
-	
-}
-
-/*Apply new settings to elements/classes/ids when screen width below 320px*/
-@media only screen and (max-width:320px) {
-	/* For mobile phones: */
-
-	.borderForInputs {
-		width:100%;
-	}
-	.header{
-		padding-top: 40px;
-
+		width: 100px;
 	}
 }
