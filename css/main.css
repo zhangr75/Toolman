@@ -314,7 +314,7 @@ input:required{
 		
 	}
 	.header{
-		padding-top: 40px;
+		padding-top: 5px;
 		height: 18%;
 
 	}
@@ -327,11 +327,16 @@ input:required{
 		height:82vh;
 	}
 
+	.tosearch{
+		width: 150px;
+	}
+
 	#searchbox{
 		text-align: left;
 		padding-top: 0;
 		margin:auto;
 		width:200px;
+		width: 400px;
 	}
 	.footer{
 		width: 100%;
@@ -362,6 +367,7 @@ input:required{
 
 	#searchbox{
 		margin-right:0;
+		width: auto;
 	}
 
 	.borderForInputs {
