@@ -5,6 +5,10 @@
 •Member 2: Boming Jin (jinb5)
 •Live Server: http://3.13.254.133/
 
+All .js files are in javascript folder.
+All media files are in images folder.
+We used Animate.css as library.
+
 We did add-on tasks.
 
 · Click search button to show search result on the left side and the marker on right side. Click result or more info link in markr will go the individualobjectpage.
