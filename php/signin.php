@@ -1,5 +1,5 @@
 <?php 
-    require '../php/connect.php';
+    require '../Toolman/php/connect.php';
     $email = $_POST["EMailAddress"];
     $password = $_POST["Userpw"];
 

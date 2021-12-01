@@ -1,5 +1,5 @@
 <?php 
-    require '../php/connect.php';
+    require '../Toolman/php/connect.php';
     $phone_number = $_POST["PhoneNumber"];
     $email = $_POST["EMailAddress"];
     $password = $_POST["Userpw"];
