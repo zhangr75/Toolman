@@ -74,7 +74,8 @@ function validationForSignUp(form){
     var numVal = validPhoneNumber(form);
     var emailVal = validEmail(form);
     var pwVal = validPW(form);
-    if (numVal == false || emailVal == false || pwVal == false){
+    var uN = validUN(form);
+    if (numVal == false || emailVal == false || pwVal == false || uN == false){
         return false;
     }
     else{
@@ -145,6 +146,21 @@ function validPW(form){
         alert("Need to fill up Password.")
         return false;
     }
+    else if(!(/^[a-zA-Z0-9]{8,32}$/.test(form.Username.value))){
+        alert("Invalid form of Password");
+        return false;
+    }
     return true;
 }
 
+function validUN(form){
+    if(form.Username.value == ""){
+        alert("Need to fill up UserName.")
+        return false;
+    }
+    else if(!(/^[a-zA-Z]{8,12}$/.test(form.Username.value))){
+        alert("Invalid form of Username");
+        return false;
+    }
+    return true;
+}

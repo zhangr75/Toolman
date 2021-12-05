@@ -2,7 +2,7 @@
 class Database
 {
     private $servername = "localhost";
-    private $dbName = "signin";
+    private $dbName = "main";
     private $username = "root";
     private $password = "Nicksuper1!";
     public $conn;
