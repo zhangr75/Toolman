@@ -165,3 +165,66 @@ function validUN(form){
     return true;
 }
 
+/*ajax for multiple using*/
+function signUp(){
+    let PhoneNumber = $('#phonenum').val();
+    let EMailAddress = $('#email').val();
+    let Userpw = $('#userpw').val();
+    let Username = $('#username').val();
+    if(PhoneNumber != "" && EMailAddress != "" && Userpw != "" && Username != ""){
+        if (validationForSignUp(document.forms["signUp"])){
+            $.ajax({
+                type:"POST",
+                url:"/Toolman/php/signup.php",
+                data: {'PhoneNumber':PhoneNumber, 'EMailAddress':EMailAddress, 'Userpw':Userpw, 'Username':Username},
+                success:function(response){
+                    var data = JSON.parse(response);
+                    if (data.response_status == '1'){
+                        $("#alrtsuccess").fadeIn("slow").delay(1500).fadeOut(700);
+                        $('#alrtsuccess .title').html(data.response_mess);
+                    }
+                    else{
+                        $("#alrtsuccess").fadeIn("slow").delay(1500).fadeOut(700);
+                        $('#alrtsuccess .title').html(data.response_mess);
+                    }
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    if (XMLHttpRequest.readyState == 4) {
+                      // HTTP error (can be checked by XMLHttpRequest.status and XMLHttpRequest.statusText)
+                      if(textStatus === 'timeout'){     
+                        console.log("uns: Failed from timeout.");
+                      } else {
+                        console.log("uns: HTTP error.");
+                      }
+ 
+                    } else if (XMLHttpRequest.readyState == 0) {
+                      // Network error (i.e. connection refused, access denied due to CORS, etc.)
+                      if(textStatus === 'timeout'){     
+                        console.log("uns: Failed from timeout.");
+                      } else {
+                        console.log("uns: A network error occurred. Please try again.");
+                      }
+ 
+                    } else {
+                      // something weird is happening
+                      if(textStatus === 'timeout'){     
+                        console.log("uns: Failed from timeout.");
+                      } else {
+                        console.log("uns: Something weird is happening.");
+                      }
+                    }
+                  },
+                  timeout: 20000,
+
+            }).fail(function(jqXHR, textStatus){
+            });;
+        }
+        else{
+            return validationForSignUp(document.forms["signUp"]);
+        }
+        
+    }
+    else{
+        return validationForSignUp(document.forms["signUp"]);
+    }
+}

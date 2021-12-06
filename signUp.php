@@ -11,7 +11,7 @@
         <meta name="viewport" content="width=device-width, initial-scale = 1.0">
         
         <!--link to the external css file-->
-        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/main.css">
         <!--Google fonts-->
         <link href="//fonts.googleapis.com/css?family=Ubuntu+Mono:400italic,400,700italic,700" rel="stylesheet" type="text/css">
@@ -22,8 +22,8 @@
         />
 
         <!--External JavaScript file-->
-        <script src="javascript/index.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="javascript/index.js"></script>
         <!--Set where the window should been opened when clicking hyperlink. Open the document in the same window-->
         <base target = "_self">
     </head>
@@ -57,7 +57,7 @@
 
             <!--For future to post information to server sides-->
             <div class = "InputBox">
-                <form method = "post" action="/Toolman/php/signup.php" onsubmit = "return validationForSignUp(this);">
+                <form id = "signUp" method = "post" >
                     <label for = "phonenum">Phone Number</label>
                     <br/>
                     <input id = "phonenum" type = "text" name = "PhoneNumber">
@@ -90,7 +90,7 @@
                     <input id="female" type="radio" name="gender" value="Female">
                     
                     <br/><br/>
-                    <input id = "submitButton" type = "submit" value = "submit">
+                    <input id = "submitButton" type = "button" value = "submit" onclick = "signUp();">
                     <input id = "resetButton" type = "reset" value = "reset">
                 </form>
             </div>
@@ -100,19 +100,10 @@
         <div class = "footer">
             <p>Author: Run Zhang, Boming Jin &copy; 2021-10-08</p>
         </div>
-
-        <!--ajax for multiple using-->
-        <script type = "text/javascript">
-            function signUp(){
-                let PhoneNumber = $('#phonenum').val();
-                let EMailAddress = $('#email').val();
-                let Userpw = $('#userpw').val();
-                let Username = $('#username').val();
-                if (PhoneNumber != "" && EMailAddress != "" && Userpw != "" && Username != ""){
-                    
-                }
-            }
-        </script>
+        
+        <div id="alrtsuccess" class="float_alert alert alert-success alert-dismissible fade show" style="display: none;">
+           <p class="title m-0"></p>
+        </div>
     </body>
 
 

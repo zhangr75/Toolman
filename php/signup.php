@@ -13,7 +13,9 @@
         $database = new Database();
         $db = $database->getConnection();
         if($db['status'] == '0'){
-            echo "Connection to database failed: " . $db['message'];
+            $response['response_status'] = '0';
+            $response['response_mess'] = "Connection to database failed: " . $db['message'];
+            echo json_encode($response);
         }else{
             //Inserting data into the database
             try {
@@ -27,15 +29,19 @@
                 $statement->execute();
                 $result = $statement->fetchAll(PDO::FETCH_ASSOC);
                 if(!empty($result)){
-                    echo "You have already Signed Up, Please Log In!";
+                    $response['response_status'] = '0';
+                    $response['response_mess'] = "You have already Signed Up, Please Log In!";
+                    echo json_encode($response);
                 } else{
                     $query = "insert into user(email,password,phone_number,sec_q,id) VALUES ('$email','$hashedPass','$phone_number','$sec_q',null)";
                     $statement = $conn->prepare($query);
                     $res = $statement->execute();
                     if(!empty($res)){
-                        echo "<a href = '../index.php'>Back to main page</a>";
-                        echo "<br/>";
-                        echo "Or, <a href = '../logIn.html'>Log In</a> to tht account";
+                        $response['response_status'] = '1';
+                        $response['response_mess'] = 'Success!';
+                        echo json_encode($response,  JSON_FORCE_OBJECT);
+                        header("Location: ../index.php");
+                        exit();
                     }        
                 }
                       
@@ -47,7 +53,6 @@
     else{
         echo "Invalid method Please <a href = '../signUp.html'>try again</a>";
     }
-    //Get values from $_POST super global variable
     
     
 ?>
