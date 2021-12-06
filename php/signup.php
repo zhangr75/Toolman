@@ -39,9 +39,8 @@
                     if(!empty($res)){
                         $response['response_status'] = '1';
                         $response['response_mess'] = 'Success!';
-                        echo json_encode($response,  JSON_FORCE_OBJECT);
-                        header("Location: ../index.php");
-                        exit();
+                        echo json_encode($response);
+                        
                     }        
                 }
                       
@@ -51,7 +50,9 @@
         }
     }
     else{
-        echo "Invalid method Please <a href = '../signUp.html'>try again</a>";
+        $response['response_status'] = '0';
+        $response['response_mess'] = "Invalid method Please try again";
+        echo $response;
     }
     
     
