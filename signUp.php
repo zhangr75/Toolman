@@ -29,12 +29,25 @@
     </head>
 
     <body>
+        <?php
+        $emailErr;
+        $phoneErr;
+        $passErr;
+        $userNameErr;
+
+        function test_input($input) {
+            $input = trim($input);
+            $input = stripslashes($input);
+            $input = htmlspecialchars($input);
+            return $input;
+          }
+        ?>
         <div class = "header">
             <div class = "navBar"> 
-                <a href = "index.html">To Main Page</a>
-                <a href = "index.html">Link2</a>
-                <a href = "index.html">Link3</a>
-                <a href = "index.html">Link4</a>
+                <a href = "index.php">To Main Page</a>
+                <a href = "index.php">Link2</a>
+                <a href = "index.php">Link3</a>
+                <a href = "index.php">Link4</a>
             </div>
         </div>
         <div class = "borderForInputs">
@@ -87,6 +100,19 @@
         <div class = "footer">
             <p>Author: Run Zhang, Boming Jin &copy; 2021-10-08</p>
         </div>
+
+        <!--ajax for multiple using-->
+        <script type = "text/javascript">
+            function signUp(){
+                let PhoneNumber = $('#phonenum').val();
+                let EMailAddress = $('#email').val();
+                let Userpw = $('#userpw').val();
+                let Username = $('#username').val();
+                if (PhoneNumber != "" && EMailAddress != "" && Userpw != "" && Username != ""){
+                    
+                }
+            }
+        </script>
     </body>
 
 
