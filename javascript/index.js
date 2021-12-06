@@ -79,7 +79,7 @@ function showresult(){
                 if(result!=''){
                     data = eval ("("+result+")");
                 }
-                $('#restaurant').html("name: " + data.name = ",address: " + data.address);
+                $('#restaurant').html("name: " + data.name + ",address: " + data.address);
              }
         })
 
