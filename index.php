@@ -17,7 +17,7 @@
 
     <!--External JavaScript file-->
     <script src="javascript/index.js"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     
     
 
@@ -39,7 +39,8 @@
         </div>
 
         <div id="searchbox">
-            <input type="text" class ="tosearch" placeholder="Restaurant...">
+        <form method = "post" action="../Toolman/php/searchbox.php">
+            <input type="text" class ="tosearch" placeholder="Restaurant..." name = "search">
             <select name="rating" class="todrop">
                 <option selected disabled>Rating</option>
                 <option value="1star">1 star</option>
@@ -49,7 +50,8 @@
                 <option value="5star">5 star</option>
             </select>
             <img id = "currentlocation" src = "images/gps_btn.png" alt = "GPS button" onclick= "showposition()" title = "Find your location">
-            <button type="submit" class="searchbutton" onclick="showresult()">Search</button>
+            <button type="submit" class="searchbutton" name = "searchbtn" onclick="showresult()">Search</button>
+        </form>
         </div>
     </div>
     
