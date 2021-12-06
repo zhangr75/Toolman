@@ -36,9 +36,54 @@ function showposition(){
     }
 }
 
+/**
+$(function(){
+    $("#searchbtn").on('click'),function(){
+        var $name = $("searchcontent").val(),
+        if($name == ''){
+            alert("input empty");
+            return false;
+        }else{
+            var data = {
+                name: $name
+            }
+        }
+        $.ajax({
+             type:"POST",
+             url:"/Toolman/php/searchbox.php",
+             data: data,
+             success:function(reslut){
+
+             }
+        })
+    }
+})
+**/
+
+
 function showresult(){
-    document.getElementById('yummy').style.display = "block";
-    document.getElementById('yummy').style.animation = "fadeInLeft 0.5s linear 1";
+    var name = $('#searchcontent').val();
+    if (name == ''){
+        alert("input empty");
+        return false;
+    }
+    $.ajax({
+             type:"GET",
+             url:"/Toolman/php/searchbox.php",
+             data: name,
+             dataType: "json",
+
+             success:function(result){
+                $('#restaurant').empty();
+                var data ='';
+                if(result!=''){
+                    data = eval ("("+result+")");
+                }
+                $('#restaurant').html("name: " + data.name = ",address: " + data.address);
+             }
+        })
+
+
     var searchexample = 
                 '<div class="info_content">' +
                 '<h3>So yummy</h3>' +
@@ -60,6 +105,7 @@ function showresult(){
     marker.addListener("mouseover", bounceanimation);
 }
 
+
 function bounceanimation() {
   if (marker.getAnimation() !== null) {
     marker.setAnimation(null);
@@ -67,6 +113,7 @@ function bounceanimation() {
     marker.setAnimation(google.maps.Animation.BOUNCE);
   }
 }
+
 
 //Check the validation of the input this is the aggregate function
 function validationForSignUp(form){

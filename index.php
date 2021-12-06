@@ -39,8 +39,8 @@
         </div>
 
         <div id="searchbox">
-        <form method = "post" action="../Toolman/php/searchbox.php">
-            <input type="text" class ="tosearch" placeholder="Restaurant..." name = "search">
+        <form id = "searchform">
+            <input type="text" id = "searchcontent" class ="tosearch" placeholder="Restaurant..." name = "search">
             <select name="rating" class="todrop">
                 <option selected disabled>Rating</option>
                 <option value="1star">1 star</option>
@@ -63,18 +63,7 @@
 
             <h3>Top 10 restaurant near you!</h3> 
             
-            <a href = "individual_sample.html">
-                <div id="yummy">
-                    <img src="images/yummy.jpeg" id="yummyimg" alt = "Yummy Image" title = "Link to Object Page!">
-                    <div class="ratestar">
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
-                    </div>
-                </div>  
-            </a>
+            <div id="restaurant"></div>  
 
             <br/>
 
