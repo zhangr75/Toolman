@@ -101,9 +101,13 @@
             <p>Author: Run Zhang, Boming Jin &copy; 2021-10-08</p>
         </div>
         
-        <div id="alrtsuccess" class="float_alert alert alert-success alert-dismissible fade show" style="display: none;">
-           <p class="title m-0"></p>
+        <div id = "alrtsuccess" class="alert alert-success" role="alert" style = "display:none">
+            <p class = "title m-0"></p>
         </div>
+        <div id = "alrtdanger" class="alert alert-danger" role="alert" style = "display:none">
+            <p class = "title m-0"></p>
+        </div>
+
     </body>
 
 

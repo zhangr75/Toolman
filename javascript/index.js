@@ -184,8 +184,8 @@ function signUp(){
                         $('#alrtsuccess .title').html(data.response_mess);
                     }
                     else{
-                        $("#alrtsuccess").fadeIn("slow").delay(1500).fadeOut(700);
-                        $('#alrtsuccess .title').html(data.response_mess);
+                        $("#alrtdanger").fadeIn("slow").delay(1500).fadeOut(700);
+                        $('#alrtdanger .title').html(data.response_mess);
                     }
                 },
                 error: function(XMLHttpRequest, textStatus, errorThrown) {
