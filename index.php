@@ -32,8 +32,8 @@
         <div id="regpart">
             <!--make buttons as the hyperlink to another page for log in or sign up-->
             <form>        
-            <button formaction = "logIn.html" type="submit" class="reg">Log In</button>
-            <button formaction = "signUp.html" type="submit" class="reg">Sign Up</button>
+            <button formaction = "logIn.php" type="submit" class="reg">Log In</button>
+            <button formaction = "signUp.php" type="submit" class="reg">Sign Up</button>
             </form>
 
         </div>

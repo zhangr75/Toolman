@@ -4,12 +4,12 @@
 
     <head>
         <!--Title that showed in the title bar-->
-        <title>Sign Up</title> 
-        
+        <title>Log In</title>
+
         <meta charset="UTF-8">
         <!--let the website look good on all devices-->
         <meta name="viewport" content="width=device-width, initial-scale = 1.0">
-        
+
         <!--link to the external css file-->
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/main.css">
@@ -31,61 +31,36 @@
     <body>
         <div class = "header">
             <div class = "navBar"> 
-                <a href = "index.html">To Main Page</a>
-                <a href = "index.html">Link2</a>
-                <a href = "index.html">Link3</a>
-                <a href = "index.html">Link4</a>
+                <a href = "index.php">To Main Page</a>
+                <a href = "index.php">Link2</a>
+                <a href = "index.php">Link3</a>
+                <a href = "index.php">Link4</a>
             </div>
         </div>
         <div class = "borderForInputs">
             <div class = "captionForInoutBoxes">
-                <h1><span class = "TitleSize">Sign Up</span></h1>
+            <h1><span class = "TitleSize">Log In</span></h1>
             </div>
 
-            <!--For future to post information to server sides-->
+            <!--For future to retrieving information-->
             <div class = "InputBox">
-                <form method = "post" action="/Toolman/php/signup.php" onsubmit = "return validationForSignUp(this);">
-                    <label for = "phonenum">Phone Number</label>
-                    <br/>
-                    <input id = "phonenum" type = "text" name = "PhoneNumber">
-                    <br/>
-
+                <form method = "post" action="../Toolman/php/signin.php" onsubmit = "return validationForLogIn(this);">
                     <label for = "email">E-mail Address</label>
                     <br/>
                     <input id = "email" type = "text" name = "EMailAddress">
                     <br/>
-
                     <label for = "userpw">Password</label>
                     <br/>
                     <input id = "userpw" type = "password" name = "Userpw">
                     <br/>
-                    <span class = "notice">*Text&numbers 8-32 long</span>
-                    <br/>
+                    <input id = "logInButton" type = "submit" value = "Log In">
                     
-                    <!--For user to enter the customized answers-->
-                    <label for = "username">Username</label>
-                    <br/>
-                    <input id = "username" name = "Username">
-                    <br/>
-                    <span class = "notice">*Only text 8-12 long</span>
-                    <br/>
-
-                    <!--Choose one of two genders-->
-                    <label for="male">Male</label>
-                    <input id="male" type="radio" name="gender" value="Male">
-                    <label for="female">Female</label>
-                    <input id="female" type="radio" name="gender" value="Female">
-                    
-                    <br/><br/>
-                    <input id = "submitButton" type = "submit" value = "submit">
-                    <input id = "resetButton" type = "reset" value = "reset">
                 </form>
             </div>
-            
         </div>
 
         <div class = "footer">
-            <p>Author: Run Zhang, Boming Jin &copy; 2021-10-08</p>
+                <p>Author: Run Zhang, Boming Jin &copy; 2021-10-08</p>
         </div>
     </body>
 

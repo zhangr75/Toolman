@@ -8,6 +8,12 @@ html, body{
 .notice{
 	color: #00c3ff;
 	font-size: 0.9em;
+	/*display:none;*/
+}
+
+.error{
+	color: #FF0000;
+	display: none;
 }
 
 form{
