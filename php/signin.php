@@ -43,7 +43,6 @@
                                 //setup super global SESSION things session_status = true for valid, false for invalid
                                 $_SESSION['session_status'] = true;
                                 $_SESSION['email'] = $email;
-                                $_SESSION['userName'] = $userName;
                                 $_SESSION['session_mess'] = '';
                                 header('Location: /Toolman/index.php');
                             }
