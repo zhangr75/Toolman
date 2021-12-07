@@ -41,19 +41,19 @@
                                 $userName = $result[0]['sec_q'];
                                 var_dump($userName);
                                 //setup super global SESSION things session_status = true for valid, false for invalid
-                                $_SESSION['session_status'] = true;
+                                $_SESSION['session_status'] = 'true';
                                 $_SESSION['email'] = $email;
                                 $_SESSION['session_mess'] = '';
                                 header('Location: /Toolman/index.php');
                             }
                             else{
-                                $_SESSION['session_status'] = false;
+                                $_SESSION['session_status'] = 'false';
                                 $_SESSION['session_mess'] = 'Wrong Password';
                                 header('Location: /Toolman/logIn.php');
                             }
                         } 
                         else{
-                            $_SESSION['session_status'] = false;
+                            $_SESSION['session_status'] = 'false';
                             $_SESSION['session_mess'] = 'You do not have an account yet, go sign up';
                             header('Location: /Toolman/logIn.php');
                         }       
@@ -67,13 +67,13 @@
         
         }
         else{
-            $_SESSION['session_status'] = false;
+            $_SESSION['session_status'] = 'false';
             $_SESSION['session_mess'] = 'Invalid input';
             header('Location: /Toolman/logIn.php');
         }
     }
     else{
-        $_SESSION['session_status'] = false;
+        $_SESSION['session_status'] = 'false';
         $_SESSION['session_mess'] = 'Invalid mehtod';
         header('Location: /Toolman/logIn.php');
     }

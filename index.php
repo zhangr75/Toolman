@@ -41,7 +41,7 @@
                                 <?php
                                 if(isset($_SESSION['session_status'])){
                                     if(!empty($_SESSION['session_status'])){
-                                        if ($_SESSION['session_status'] == true){
+                                        if ($_SESSION['session_status'] == 'true'){
                                             echo 'php/logout.php';
                                         }
                                         else{
@@ -56,7 +56,7 @@
                 <?php 
                     if(isset($_SESSION['session_status'])){
                         if(!empty($_SESSION['session_status'])){
-                            if ($_SESSION['session_status'] == true){
+                            if ($_SESSION['session_status'] == 'true'){
                                 echo 'Log Out';
                             }
                             else{
