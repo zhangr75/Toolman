@@ -1,6 +1,5 @@
 var map, marker, infoWindow;  //variables to set up map and markers
 
-
 //Initialize the Google Map API
 function initMap() {
     //set up map object by initializing the zoom index and the position: lat, lag
@@ -63,7 +62,8 @@ function showposition(){
 
 
 
-function showresult(){
+var showresult =  function(){
+    var la, lo;
     let name = $('#searchcontent').val();
     if (name == ''){
         alert("input empty");
@@ -74,11 +74,39 @@ function showresult(){
              url:"/Toolman/php/searchbox.php",
              data: {"search": name},
              dataType: "html",
-
+             async : false,
              success:function(result){
-                $("#restaurant").html(result).show(); 
-             }
+                //$("#restaurant").html(result).show(); 
+                $("#result_table").empty();
+                var resulthtml = '';
+                data = '';
+                data = eval("("+result+")");
+                $.each(data, function (i,item) {
+                        resulthtml += "<tr><td>" + item.name + "</tr><td>" + item.address + "</tr></td>"
+                })
+                $("#result_table").append(resulthtml);
+                $.each(data, function (i,item) {
+                        la = item.latitude;
+                        lo = item.longitude;
+                })
+                }
+
         })
+    
+        var examplemarker = {
+            lat: la, 
+            lng: lo
+        };
+
+        marker.setPosition(examplemarker);//set the location of marker
+        map.setCenter(examplemarker, 9)//reset the centre of the map
+
+        google.maps.event.addListener(marker,'click', function() {
+            infoWindow.setContent(searchexample);
+            infoWindow.open(map, marker);
+            });
+        marker.setAnimation(google.maps.Animation.DROP);
+        marker.addListener("mouseover", bounceanimation);
 
     /**
     var searchexample = 

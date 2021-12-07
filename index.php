@@ -68,7 +68,14 @@
             <h3>Top 10 restaurant near you!</h3> 
             
             <div id="restaurant"></div>  
-
+                <table id="result_table" border='1'>
+                    <tr>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                    </tr>
+                </table>
             <br/>
 
             <p>Sorry, there are no more restaurants nearby...</p>   
