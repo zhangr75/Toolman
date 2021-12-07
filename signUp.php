@@ -108,10 +108,10 @@
             <p>Author: Run Zhang, Boming Jin &copy; 2021-10-08</p>
         </div>
         
-        <div id = "alrt" class="alert alert-success" role="alert" style = "display:none">
+        <div id = "alrt" class="alert alert-success" role="alert" style = "display:none; text-align: center">
             <p class = "title m-0"></p>
         </div>
-        <div id = "alrtdanger" class="alert alert-danger" role="alert" style = "display:none">
+        <div id = "alrtdanger" class="alert alert-danger" role="alert" style = "display:none; text-align: center">
             <p class = "title m-0"></p>
         </div>
 
