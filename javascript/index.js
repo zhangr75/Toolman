@@ -93,7 +93,6 @@ var showresult =  function(){
 
         })
         
-        alert("latitude" + la +"longitude" + lo);
         var examplemarker = {
             lat: parseFloat(la), 
             lng: parseFloat(lo)
