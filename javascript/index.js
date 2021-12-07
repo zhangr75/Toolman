@@ -92,10 +92,11 @@ var showresult =  function(){
                 }
 
         })
-    
+        
+        alert("latitude" + la +"longitude" + lo);
         var examplemarker = {
-            lat: la, 
-            lng: lo
+            lat: parseFloat(la), 
+            lng: parseFloat(lo)
         };
 
         marker.setPosition(examplemarker);//set the location of marker
