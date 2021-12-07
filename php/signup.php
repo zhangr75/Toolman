@@ -25,15 +25,15 @@
                 }
                 if(!filter_var($newemail, FILTER_VALIDATE_EMAIL)){
                     $response['response_status'] = '0';
-                    $response['response_mess'] = " Invalid Email";
+                    $response['response_mess'] = $response['response_mess'] . " Invalid Email";
                 }
                 if(!preg_match('/^[a-zA-Z0-9]{8,32}$/', $newpassword)){
                     $response['response_status'] = '0';
-                    $response['response_mess'] = " Invalid Password";
+                    $response['response_mess'] = $response['response_mess'] . " Invalid Password";
                 }
                 if(!preg_match('/^[a-zA-Z]{8,12}$/', $newsec_q)){
                     $response['response_status'] = '0';
-                    $response['response_mess'] = " Invalid User Name";
+                    $response['response_mess'] = $response['response_mess'] . " Invalid User Name";
                     echo json_encode($newsec_q);
                 }
                 if(!empty($response['response_mess'])){
@@ -67,15 +67,15 @@
                                 echo json_encode($response);
                             } 
                             else{
-                                $query = "insert into user(email,password,phone_number,sec_q,id) VALUES ('$email','$hashedPass','$phone_number','$sec_q',null)";
+                                $query = "insert into user(email,password,phone_number,sec_q,id) VALUES ('$newemail','$hashedPass','$newphone_number','$newsec_q',null)";
                                 $statement = $conn->prepare($query);
                                 $res = $statement->execute();
                                 if(!empty($res)){
                                     $response['response_status'] = '1';
                                     $response['response_mess'] = 'Success!';
                                     echo json_encode($response);
-                                    
-                                }        
+
+                                }       
                             }
                         }
                         catch (Exception $e) {

@@ -18,13 +18,13 @@
                 if(!filter_var($newemail, FILTER_VALIDATE_EMAIL)){
                     $_SESSION['session_status'] = 'middle';
                     $_SESSION['email'] = $newemail;//used for maintain the input of user entered also checked validation
-                    $_SESSION['session_mess'] = 'Invalid Email';
+                    $_SESSION['session_mess'] = $_SESSION['session_mess'] . 'Invalid Email';
                 }
 
                 if(!preg_match('/^[a-zA-Z0-9]{1,}$/', $newpassword)){
                     $_SESSION['session_status'] = 'middle';
                     $_SESSION['email'] = $newemail;//used for maintain the input of user entered also checked validation
-                    $_SESSION['session_mess'] = 'Invalid Password';
+                    $_SESSION['session_mess'] = $_SESSION['session_mess'] . 'Invalid Password';
                 }
                 if(!empty($_SESSION['session_mess'])){
                     header('Location: /Toolman/logIn.php');
