@@ -83,7 +83,9 @@ var showresult =  function(){
                 data = '';
                 data = eval("("+result+")");
                 $.each(data, function (i,item) {
-                        resulthtml += "<tr><td>" + "<a href=''indivudual_page.php?resturantId=' + item.id'>" +  item.name + "</a>"
+                        var itemid = item.id;
+                        var strlink = "indivudual_page.php?resturantId=" +itemid;
+                        resulthtml += "<tr><td>" + "<a href= strlink>" +  item.name + "</a>"
                                       "</tr><td>" + item.address + 
                                       "</tr></td>"
                         la = item.latitude;
