@@ -57,15 +57,19 @@
 
             <!--For future to post information to server sides-->
             <div class = "InputBox">
-                <form id = "signUp" method = "post" >
+                <form id = "signUp" method = "post">
                     <label for = "phonenum">Phone Number</label>
                     <br/>
                     <input id = "phonenum" type = "text" name = "PhoneNumber">
+                    <br/>
+                    <span id = "phoneErr" class="error"></span>
                     <br/>
 
                     <label for = "email">E-mail Address</label>
                     <br/>
                     <input id = "email" type = "text" name = "EMailAddress">
+                    <br/>
+                    <span id = "emailErr" class="error"></span>
                     <br/>
 
                     <label for = "userpw">Password</label>
@@ -74,13 +78,16 @@
                     <br/>
                     <span class = "notice">*Text&numbers 8-32 long</span>
                     <br/>
+                    <span id = "passErr" class="error"></span>
+                    <br/>
                     
-                    <!--For user to enter the customized answers-->
                     <label for = "username">Username</label>
                     <br/>
                     <input id = "username" name = "Username">
                     <br/>
                     <span class = "notice">*Only text 8-12 long</span>
+                    <br/>
+                    <span id = "unErr" class="error"></span>
                     <br/>
 
                     <!--Choose one of two genders-->

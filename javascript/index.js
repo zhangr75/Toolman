@@ -147,42 +147,28 @@ function validationForLogIn(form){
 function validPhoneNumber(form){
 
     if(form.PhoneNumber.value == ""){
-        alert("Need to fill up Phone Number")
+        $('#phoneErr').html("Need to fill up Phone Number");
         return false;
     }
 
     //Regular expression to restrict the form that user entering the phone number
     else if (!(/^(\+1)?[\s\-]?\(?[0-9]{3}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{4}$/.test(form.PhoneNumber.value))){
-        alert("Invalid form of Phone Number");
+        $('#phoneErr').html("Invalid form of Phone Number");
         return false;
     }
     return true;
-
-    //found a more specific way to set the pattern which prevent some inputs like (905)+1344355 passing the validation
-    /*
-    var standard = form.PhoneNumber.value.replace(/^(\+1)/g, "");
-    var text = standard.replace(/[\(\)\s\-]/g, "");
-    if (form.PhoneNumber.value == ""){
-        alert("Need to fill something")
-        return false;
-    }
-    else if (/^[0-9]{10}$/.test(text)){
-        alert("Invalid form of phone number");
-        return false;
-    }
-    */
 
 }
 
 function validEmail(form){
     if(form.EMailAddress.value == ""){
-        alert("Need to fill up E-Mail Address.")
+        $('#emailErr').html("Need to fill up E-Mail Address.");
         return false;
     }
 
     //Regular expression to restrict the form that user entering the email address
     else if (!(/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,})+$/.test(form.EMailAddress.value))){
-        alert("Invalid form of E-mail Address");
+        $('#emailErr').html("Invalid form of E-mail Address");
         return false;
     }
     return true;
@@ -190,11 +176,11 @@ function validEmail(form){
 
 function validPW(form){
     if(form.Userpw.value == ""){
-        alert("Need to fill up Password.")
+        $('#passErr').html("Need to fill up Password.");
         return false;
     }
     else if(!(/^[a-zA-Z0-9]{8,32}$/.test(form.Username.value))){
-        alert("Invalid form of Password");
+        $('#passErr').html("Invalid form of Password");
         return false;
     }
     return true;
@@ -202,11 +188,11 @@ function validPW(form){
 
 function validUN(form){
     if(form.Username.value == ""){
-        alert("Need to fill up UserName.")
+        $('#unErr').html("Need to fill up UserName.");
         return false;
     }
     else if(!(/^[a-zA-Z]{8,12}$/.test(form.Username.value))){
-        alert("Invalid form of Username");
+        $('#unErr').html("Invalid form of Username");
         return false;
     }
     return true;
@@ -214,12 +200,18 @@ function validUN(form){
 
 /*ajax for multiple using*/
 function signUp(){
+    /*Get the input form users*/
     let PhoneNumber = $('#phonenum').val();
     let EMailAddress = $('#email').val();
     let Userpw = $('#userpw').val();
     let Username = $('#username').val();
+
+    /*Check if all required inputs are typed in*/
     if(PhoneNumber != "" && EMailAddress != "" && Userpw != "" && Username != ""){
+        /*Validate the input*/
         if (validationForSignUp(document.forms["signUp"])){
+
+            /*Using ajax to dynamically showing the message*/
             $.ajax({
                 type:"POST",
                 url:"/Toolman/php/signup.php",
@@ -227,8 +219,9 @@ function signUp(){
                 success:function(response){
                     var data = JSON.parse(response);
                     if (data.response_status == '1'){
-                        $("#alrtsuccess").fadeIn("slow").delay(1500).fadeOut(700);
-                        $('#alrtsuccess .title').html(data.response_mess);
+                        $("#alrt").fadeIn("slow").delay(1500).fadeOut(700);
+                        $('#alrt .title').html(data.response_mess);
+                        setTimeout(function(){window.open("/Toolman/logIn.php", "_self")}, 3000);
                     }
                     else{
                         $("#alrtdanger").fadeIn("slow").delay(1500).fadeOut(700);
@@ -265,9 +258,6 @@ function signUp(){
 
             }).fail(function(jqXHR, textStatus){
             });;
-        }
-        else{
-            return validationForSignUp(document.forms["signUp"]);
         }
         
     }
