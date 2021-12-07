@@ -101,7 +101,7 @@
             <div id="restaurant"></div>  
                 <table id="result_table" style = "border: 1">
                     <tr>
-                        <td></td>
+                        <td id = "jump"></td>
                     </tr>
                     <tr>
                         <td></td>

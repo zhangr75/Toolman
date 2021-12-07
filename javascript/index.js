@@ -79,16 +79,18 @@ var showresult =  function(){
                 //$("#restaurant").html(result).show(); 
                 $("#result_table").empty();
                 var resulthtml = '';
+                var resultid = '';
                 data = '';
                 data = eval("("+result+")");
                 $.each(data, function (i,item) {
-                        resulthtml += "<tr><td>" + item.name + "</tr><td>" + item.address + "</tr></td>"
-                })
-                $("#result_table").append(resulthtml);
-                $.each(data, function (i,item) {
+                        resulthtml += "<tr><td>" + "<a href=''indivudual_page.php?resturantId=' + item.id'>" +  item.name + "</a>"
+                                      "</tr><td>" + item.address + 
+                                      "</tr></td>"
                         la = item.latitude;
                         lo = item.longitude;
+                        resultid = item.id;
                 })
+                $("#result_table").append(resulthtml);
                 }
 
         })
