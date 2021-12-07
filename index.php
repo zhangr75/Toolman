@@ -50,7 +50,7 @@
                 <option value="5star">5 star</option>
             </select>
             <img id = "currentlocation" src = "images/gps_btn.png" alt = "GPS button" onclick= "showposition()" title = "Find your location">
-            <button type="submit" class="searchbutton" name = "searchbtn" onclick="showresult()">Search</button>
+            <button type="button" class="searchbutton" name = "searchbtn" onclick="showresult()">Search</button>
         </form>
         </div>
     </div>

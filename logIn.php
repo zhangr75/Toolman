@@ -49,9 +49,14 @@
                     <br/>
                     <input id = "email" type = "text" name = "EMailAddress">
                     <br/>
+                    <span id = "emailErr" class="error"></span>
+                    <br/>
+
                     <label for = "userpw">Password</label>
                     <br/>
                     <input id = "userpw" type = "password" name = "Userpw">
+                    <br/>
+                    <span id = "passErr" class="error"></span>
                     <br/>
                     <input id = "logInButton" type = "submit" value = "Log In">
                     
