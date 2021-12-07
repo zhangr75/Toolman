@@ -46,6 +46,7 @@
             <h1><span class = "TitleSize">Log In</span></h1>
             </div>
 
+            <!--Showing message-->
             <?php
                 if(isset($_SESSION['session_mess'])){
                     if(!empty($_SESSION['session_mess'])){
