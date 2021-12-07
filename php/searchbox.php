@@ -3,7 +3,7 @@
     include_once 'database.php';
     
     $searchbox = $_GET["search"];
-
+    $i = 0;
     //Connect to database by using PDO
     $database = new Database();
     $db = $database->getConnection();
@@ -16,6 +16,18 @@
             $request = $conn->prepare($query);
             $request->execute();
             while($row =$request->fetch(PDO::FETCH_ASSOC)){
+                $arrays[$i]=$row;
+                $i++;
+            }
+            echo json_encode($arrays);
+
+            /**
+            echo "<table border='1'>
+            <tr>
+            <th>Name</th>
+            <th>Address</th>
+            </tr>";
+            while($row =$request->fetch(PDO::FETCH_ASSOC)){
             $name = $row['name'];
             $address = $row['address'];
 
@@ -25,6 +37,7 @@
                 echo "</tr>";
             }
             echo "</table>";
+            **/
         }
         catch (Exception $e) {
             die("something went wrong".$e->getMessage());
