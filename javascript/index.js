@@ -37,34 +37,34 @@ function showposition(){
 }
 
 
-$(function(){
-    $(".searchbtn").on('click'),function(){
-        var $name = $("searchcontent").val();
-        if($name == ''){
-            alert("input empty");
-            return false;
-        }else{
-            var data = {
-                name: $name
-            }
-        }
-        $.ajax({
-             type:"GET",
-             url:"/Toolman/php/searchbox.php",
-             data: name,
-             dataType: "html",
+// $(function(){
+//     $(".searchbtn").on('click'),function(){
+//         var $name = $("searchcontent").val();
+//         if($name == ''){
+//             alert("input empty");
+//             return false;
+//         }else{
+//             var data = {
+//                 name: $name
+//             }
+//         }
+//         $.ajax({
+//              type:"GET",
+//              url:"/Toolman/php/searchbox.php",
+//              data: name,
+//              dataType: "html",
 
-             success:function(result){
-                $("#restaurant").html(result); 
-             }
-        });
-    }
-});
+//              success:function(result){
+//                 $("#restaurant").html(result); 
+//              }
+//         });
+//     }
+// });
 
 
 
 function showresult(){
-    var name = $('#searchcontent').val();
+    let name = $('#searchcontent').val();
     if (name == ''){
         alert("input empty");
         return false;
@@ -72,7 +72,7 @@ function showresult(){
     $.ajax({
              type:"GET",
              url:"/Toolman/php/searchbox.php",
-             data: name,
+             data: {"search": name},
              dataType: "html",
 
              success:function(result){

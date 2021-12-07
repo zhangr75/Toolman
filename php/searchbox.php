@@ -2,7 +2,7 @@
     //Database class for connect to the database
     include_once 'database.php';
     
-    $searchbox = $_GET["searchcontent"];
+    $searchbox = $_GET["search"];
 
     //Connect to database by using PDO
     $database = new Database();
@@ -12,15 +12,10 @@
     }else{
         try {
             $query = "select * from restaurants where name ='$searchbox' ";
+            $conn = $db['connection'];
             $request = $conn->prepare($query);
-            $res = $request->execute();
-
-            $echo "<table border='1' >
-            <tr>
-            <td align=center><b>Name</b></td>
-            <td align=center><b>Address</b></td>";
-
-            while($row =$res->fetch(PDO::FETCH_ASSOC)){
+            $request->execute();
+            while($row =$request->fetch(PDO::FETCH_ASSOC)){
             $name = $row['name'];
             $address = $row['address'];
 
@@ -30,4 +25,9 @@
                 echo "</tr>";
             }
             echo "</table>";
+        }
+        catch (Exception $e) {
+            die("something went wrong".$e->getMessage());
+        }
+    }
 ?>
