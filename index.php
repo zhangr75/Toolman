@@ -53,7 +53,7 @@
                                     echo 'logIn.php';
                                 }
                     ?>" type="submit" class="reg">
-                <?php 
+                <?php
                     if(isset($_SESSION['session_status'])){
                         if(!empty($_SESSION['session_status'])){
                             if ($_SESSION['session_status'] == 'true'){
@@ -93,7 +93,7 @@
     <div class="bottom">
         <div class="leftside">
             <div class="movingbtn"> 
-                <form action="submission.html" method="get"><button type="submit" class="newobj">Add</button></form>
+                <form action="submission.php" method="get"><button type="submit" class="newobj">Add</button></form>
             </div>
 
             <h3>Top 10 restaurant near you!</h3> 
