@@ -37,10 +37,10 @@
     <body>
         <div class = "header">
             <div class = "navBar"> 
-                <a href = "index.html">To Main Page</a>
-                <a href = "index.html">Link2</a>
-                <a href = "index.html">Link3</a>
-                <a href = "index.html">Link4</a>
+                <a href = "index.php">To Main Page</a>
+                <a href = "index.php">Link2</a>
+                <a href = "index.php">Link3</a>
+                <a href = "index.php">Link4</a>
             </div>
         </div>
 

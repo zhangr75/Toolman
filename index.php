@@ -93,7 +93,7 @@
     <div class="bottom">
         <div class="leftside">
             <div class="movingbtn"> 
-                <form action="submission.html" method="get"><button type="submit" class="newobj">Add</button></form>
+                <form action="submission.php" method="get"><button type="submit" class="newobj">Add</button></form>
             </div>
 
             <h3>Top 10 restaurant near you!</h3> 
