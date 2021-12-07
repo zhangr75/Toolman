@@ -9,6 +9,7 @@
         $password = $_POST["Userpw"];
         $sec_q = $_POST["Username"];
 
+        //Check validation of the input
         $newphone_number = test_input($phone_number);
         $newemail = test_input($email);
         $newpassword = test_input($password);
@@ -37,7 +38,7 @@
                 }
                 if(!empty($response['response_mess'])){
                     echo json_encode($response);
-                    exit();
+                    exit("Invalid Input(s)");
                 }
                 else{
                     //Connect to database by using PDO

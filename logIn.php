@@ -51,7 +51,7 @@
                     if(!empty($_SESSION['session_mess'])){
                         $message = $_SESSION['session_mess'];
                         $_SESSION['session_mess'] = '';
-                        echo '<div class = "alert alert-danger" role = "alert">' . $message . '</div>';
+                        echo '<div class = "alert alert-danger" style = "text-align: center" role = "alert">' . $message . '</div>';
                     }
                 }
             
@@ -63,7 +63,15 @@
                 <form method = "post" action="/Toolman/php/signin.php" onsubmit = "return validationForLogIn(this);">
                     <label for = "email">E-mail Address</label>
                     <br/>
-                    <input id = "email" type = "text" name = "EMailAddress">
+                    <input id = "email" type = "text" name = "EMailAddress" value = "<?php 
+                                                                                        if(isset($_SESSION['session_status'])){
+                                                                                            if(!empty($_SESSION['session_status'])){
+                                                                                                if ($_SESSION['session_status'] == 'middle'){
+                                                                                                    $emailInput = $_SESSION['email'];
+                                                                                                    echo "$emailInput";
+                                                                                                }
+                                                                                            }
+                                                                                        }?>">
                     <br/>
                     <span id = "emailErr" class="error"></span>
                     <br/>

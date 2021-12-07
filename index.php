@@ -53,7 +53,7 @@
                                     echo 'logIn.php';
                                 }
                     ?>" type="submit" class="reg">
-                <?php 
+                <?php
                     if(isset($_SESSION['session_status'])){
                         if(!empty($_SESSION['session_status'])){
                             if ($_SESSION['session_status'] == 'true'){
