@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <!--Author: Run Zhang, Boming Jin -->
 <html lang = "en">

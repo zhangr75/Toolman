@@ -1,4 +1,5 @@
 <?php 
+    session_start();
     //Database class for connect to the database
     include_once 'database.php';
     
