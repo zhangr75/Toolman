@@ -36,8 +36,39 @@
         <div id="regpart">
             <!--make buttons as the hyperlink to another page for log in or sign up-->
             <form>        
-            <button formaction = "logIn.php" type="submit" class="reg">Log In</button>
             <button formaction = "signUp.php" type="submit" class="reg">Sign Up</button>
+            <button formaction = "
+                                <?php
+                                if(isset($_SESSION['session_status'])){
+                                    if(!empty($_SESSION['session_status'])){
+                                        if ($_SESSION['session_status'] == true){
+                                            echo 'php/logout.php';
+                                        }
+                                        else{
+                                            echo 'logIn.php';
+                                        }
+                                    }
+                                }
+                                else{
+                                    echo 'logIn.php';
+                                }
+                    ?>" type="submit" class="reg">
+                <?php 
+                    if(isset($_SESSION['session_status'])){
+                        if(!empty($_SESSION['session_status'])){
+                            if ($_SESSION['session_status'] == true){
+                                echo 'Log Out';
+                            }
+                            else{
+                                echo 'Log In';
+                            }
+                        }
+                    }
+                    else{
+                        echo 'Log In';
+                    }
+                ?>
+            </button>
             </form>
 
         </div>
@@ -84,23 +115,6 @@
                 <div class="footer" style="bottom: 0;">
                     <p>Author: Run Zhang, Boming Jin &copy; 2021-10-08</p>
                 </div>
-                <p><?php 
-                var_dump(isset($_SESSION['session_status']));
-                    if(isset($_SESSION['session_status'])){
-                        if(!empty($_SESSION['session_status'])){
-                            if ($_SESSION['session_status'] == true){
-                            echo 'Logged in!';
-                            echo "<a href = php/logout.php>Log out</a>";
-                            }
-                            else{
-                                echo 'Not logged in';
-                            }
-                        }
-                    else{
-                        echo 'Not logged in';
-                    }
-                    
-                    }?></p>
         </div>
 
 
