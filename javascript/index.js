@@ -36,10 +36,10 @@ function showposition(){
     }
 }
 
-/**
+
 $(function(){
-    $("#searchbtn").on('click'),function(){
-        var $name = $("searchcontent").val(),
+    $(".searchbtn").on('click'),function(){
+        var $name = $("searchcontent").val();
         if($name == ''){
             alert("input empty");
             return false;
@@ -49,16 +49,18 @@ $(function(){
             }
         }
         $.ajax({
-             type:"POST",
+             type:"GET",
              url:"/Toolman/php/searchbox.php",
-             data: data,
-             success:function(reslut){
+             data: name,
+             dataType: "html",
 
+             success:function(result){
+                $("#restaurant").html(result); 
              }
-        })
+        });
     }
-})
-**/
+});
+
 
 
 function showresult(){
@@ -71,19 +73,14 @@ function showresult(){
              type:"GET",
              url:"/Toolman/php/searchbox.php",
              data: name,
-             dataType: "json",
+             dataType: "html",
 
              success:function(result){
-                $('#restaurant').empty();
-                var data ='';
-                if(result!=''){
-                    data = eval ("("+result+")");
-                }
-                $('#restaurant').html("name: " + data.name + ",address: " + data.address);
+                $("#restaurant").html(result).show(); 
              }
         })
 
-
+    /**
     var searchexample = 
                 '<div class="info_content">' +
                 '<h3>So yummy</h3>' +
@@ -103,6 +100,7 @@ function showresult(){
         });
     marker.setAnimation(google.maps.Animation.DROP);
     marker.addListener("mouseover", bounceanimation);
+    **/
 }
 
 
