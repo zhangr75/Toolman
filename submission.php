@@ -50,25 +50,44 @@
                     <h1><span class = "TitleSize">Submission</span></h1>
                 </div>
 
+                <!--Showing message-->
+                <?php
+                    if(isset($_SESSION['session_mess'])){
+                        if(!empty($_SESSION['session_mess'])){
+                            if($_SESSION['session_mess'] == 'Success on submission!'){
+                                $message = $_SESSION['session_mess'];
+                                $_SESSION['session_mess'] = '';
+                                echo '<div class="alert alert-success" style = "text-align: center" role = "alert">' . $message . '</div>';
+                                header('Refresh:2; URL = /Toolman/index.php');
+                            }
+                            else{
+                                $message = $_SESSION['session_mess'];
+                                $_SESSION['session_mess'] = '';
+                                echo '<div class = "alert alert-danger" style = "text-align: center" role = "alert">' . $message . '</div>';
+                            }
+                        }
+                    }
+                ?>
+                
                 <!--For future to post information to server sides-->
                 <div class = "InputBox">
-                    <form method = "post" onsubmit= "return ">
+                    <form method = "post" action = "/Toolman/php/submissionHandle.php">
                         <label for = "restaurantname">Restaurant Name</label>
                         <br/>
-                        <input id = "restaurantname" type = "text" name = "restaurant name" pattern = "[0-9a-zA-Z ]+" required>
+                        <input id = "restaurantname" type = "text" name = "restaurantName" pattern = "[0-9a-zA-Z ]+" required>
                         <br/>
 
-                        <label for = "description">Description</label>
+                        <label for = "address">Address</label>
                         <br/>
-                        <textarea id = "description" name = "description" rows = "1" cols = "25"></textarea>
+                        <textarea id = "address" name = "address" rows = "1" cols = "25"></textarea>
                         <br/>
 
                         <label for = "latitude">Coordinates</label>
                         <br/>
                         <!--range from -90-90-->
-                        <input id = "latitude" name = "latitude" placeholder = "latitude" pattern = "-?([0-9](\.\d+)?|[1-8][0-9](\.\d+)?|90)" required>
-                        <!--range from -180-80-->
-                        <input id = "longitude" name = "longitude" placeholder = "longitude" pattern = "-?([0-9](\.\d+)?|[1-9][0-9](\.\d+)?|1[0-7][0-9](\.\d+)?|180)" required>
+                        <input id = "latitude" name = "latitude" placeholder = "latitude" pattern = "-?([0-9](\.\d+)?|[1-8][0-9](\.\d+)?|90\.?0*)" required>
+                        <!--range from -180-180-->
+                        <input id = "longitude" name = "longitude" placeholder = "longitude" pattern = "-?([0-9](\.\d+)?|[1-9][0-9](\.\d+)?|1[0-7][0-9](\.\d+)?|180\.?0*)" required>
                         <br/>
                         <br/>
                         <label for = "file">Select files: </label>
