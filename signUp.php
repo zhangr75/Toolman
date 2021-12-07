@@ -55,6 +55,14 @@
                 <h1><span class = "TitleSize">Sign Up</span></h1>
             </div>
 
+            <!--Showing message-->
+            <div id = "alrt" class="alert alert-success" role="alert" style = "display:none; text-align: center">
+                <p class = "title m-0"></p>
+            </div>
+            <div id = "alrtdanger" class="alert alert-danger" role="alert" style = "display:none; text-align: center">
+                <p class = "title m-0"></p>
+            </div>
+
             <!--For future to post information to server sides-->
             <div class = "InputBox">
                 <form id = "signUp" method = "post">
@@ -108,12 +116,7 @@
             <p>Author: Run Zhang, Boming Jin &copy; 2021-10-08</p>
         </div>
         
-        <div id = "alrt" class="alert alert-success" role="alert" style = "display:none; text-align: center">
-            <p class = "title m-0"></p>
-        </div>
-        <div id = "alrtdanger" class="alert alert-danger" role="alert" style = "display:none; text-align: center">
-            <p class = "title m-0"></p>
-        </div>
+        
 
     </body>
 
