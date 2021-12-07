@@ -46,6 +46,18 @@
             <h1><span class = "TitleSize">Log In</span></h1>
             </div>
 
+            <?php
+                if(isset($_SESSION['session_mess'])){
+                    if(!empty($_SESSION['session_mess'])){
+                        $message = $_SESSION['session_mess'];
+                        $_SESSION['session_mess'] = '';
+                        echo '<div class = "alert alert-danger" role = "alert">' . $message . '</div>';
+                    }
+                }
+            
+            
+            ?>
+
             <!--For future to retrieving information-->
             <div class = "InputBox">
                 <form method = "post" action="/Toolman/php/signin.php" onsubmit = "return validationForLogIn(this);">
