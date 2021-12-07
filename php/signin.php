@@ -45,6 +45,7 @@
                                 $_SESSION['email'] = $email;
                                 $_SESSION['userName'] = $userName;
                                 $_SESSION['session_mess'] = '';
+                                header('Location: /Toolman/index.php');
                             }
                         } 
                         else{

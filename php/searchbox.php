@@ -21,7 +21,7 @@
             }
             echo json_encode($arrays);
 
-            /**
+            /*
             echo "<table border='1'>
             <tr>
             <th>Name</th>
@@ -37,7 +37,7 @@
                 echo "</tr>";
             }
             echo "</table>";
-            **/
+            */
         }
         catch (Exception $e) {
             die("something went wrong".$e->getMessage());

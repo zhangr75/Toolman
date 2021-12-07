@@ -68,7 +68,7 @@
             <h3>Top 10 restaurant near you!</h3> 
             
             <div id="restaurant"></div>  
-                <table id="result_table" border='1'>
+                <table id="result_table" style = "border: 1">
                     <tr>
                         <td></td>
                     </tr>
