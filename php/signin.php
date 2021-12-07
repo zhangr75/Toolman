@@ -47,10 +47,16 @@
                                 $_SESSION['session_mess'] = '';
                                 header('Location: /Toolman/index.php');
                             }
+                            else{
+                                $_SESSION['session_status'] = false;
+                                $_SESSION['session_mess'] = 'Wrong Password';
+                                header('Location: /Toolman/logIn.php');
+                            }
                         } 
                         else{
+                            $_SESSION['session_status'] = false;
                             $_SESSION['session_mess'] = 'You do not have an account yet, go sign up';
-                            echo $_SESSION['session_mess'];
+                            header('Location: /Toolman/logIn.php');
                         }       
                     }
                     catch (Exception $e) {
@@ -64,11 +70,13 @@
         else{
             $_SESSION['session_status'] = false;
             $_SESSION['session_mess'] = 'Invalid input';
+            header('Location: /Toolman/logIn.php');
         }
     }
     else{
         $_SESSION['session_status'] = false;
         $_SESSION['session_mess'] = 'Invalid mehtod';
+        header('Location: /Toolman/logIn.php');
     }
     
 ?>
