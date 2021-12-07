@@ -48,7 +48,7 @@
 
             <!--For future to retrieving information-->
             <div class = "InputBox">
-                <form method = "post" action="../Toolman/php/signin.php" onsubmit = "return validationForLogIn(this);">
+                <form method = "post" action="/Toolman/php/signin.php" onsubmit = "return validationForLogIn(this);">
                     <label for = "email">E-mail Address</label>
                     <br/>
                     <input id = "email" type = "text" name = "EMailAddress">
@@ -61,6 +61,8 @@
                     <input id = "userpw" type = "password" name = "Userpw">
                     <br/>
                     <span id = "passErr" class="error"></span>
+                    <br/>
+                    <checkbox>
                     <br/>
                     <input id = "logInButton" type = "submit" value = "Log In">
                     

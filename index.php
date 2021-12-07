@@ -77,7 +77,23 @@
                 <div class="footer" style="bottom: 0;">
                     <p>Author: Run Zhang, Boming Jin &copy; 2021-10-08</p>
                 </div>
-
+                <p><?php 
+                var_dump(isset($_SESSION['session_status']));
+                    if(isset($_SESSION['session_status'])){
+                        if(!empty($_SESSION['session_status'])){
+                            if ($_SESSION['session_status'] == true){
+                            echo 'Logged in!';
+                            echo "<a href = php/logout.php>Log out</a>";
+                            }
+                            else{
+                                echo 'Not logged in';
+                            }
+                        }
+                    else{
+                        echo 'Not logged in';
+                    }
+                    
+                    }?></p>
         </div>
 
 
@@ -87,6 +103,7 @@
         </div>
         
     </div>
+    
 
 </body>
 </html>
