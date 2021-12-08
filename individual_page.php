@@ -37,7 +37,6 @@
 
         <!--External JavaScript file-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="javascript/index.js"></script>
         <script src="javascript/individualMap.js"></script>
 
         <!--Set where the window should been opened when clicking hyperlink. Open the document in the same window-->
@@ -49,10 +48,6 @@
         <div class = "header">
             <div class = "navBar"> 
                 <a href = "index.php">To Main Page</a>
-                <a href = "index.php">Link2</a>
-                <a href = "index.php">Link3</a>
-                <a href = "index.php">Link4</a>
-                <a href = "index.php">Link5</a>
             </div>
         </div>
 
@@ -60,17 +55,8 @@
         <div class = "leftside">
             <h2>Sample object information</h2>
             <p>address here</p>
-            <p>average stars here</p>
             <!--Lists of sample reviews-->
             <h3><em>Sample object reviews</em></h3>
-            <h2>Overall:</h2>
-                <div class="ratestar">
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-            </div>
             <ul>
                 
                 <li><strong>4stars</strong>
