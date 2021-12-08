@@ -46,7 +46,7 @@
     <body>
         <?php 
             //Database class for connect to the database
-            include_once '../Toolman/php/database.php';
+            include '../Toolman/php/database.php';
             
             $id = $_GET['resturantId'];
             //Connect to database by using PDO
@@ -56,10 +56,13 @@
                 echo "Connection to database failed: " . $db['message'];
             }else{
                 try {
-                    $query = "select * from restaurants where id ='$id' ";
                     $conn = $db['connection'];
-                    $request = $conn->prepare($query);
-                    $request->execute();
+                    $query_res = "select * from restaurants where id ='$id' ";
+                    $query_review = "select * from reviews where rest_id ='$id' ";
+                    $request_res = $conn->query($query_res);
+                    $request_review = $conn->query($query_review);
+                    $rows_res = $request_res->fetch(PDO::FETCH_ASSOC);
+                    $rows_review = $request_review->fetch(PDO::FETCH_ASSOC);
                 }
                 catch (Exception $e) {
                     die("something went wrong".$e->getMessage());
@@ -75,43 +78,42 @@
 
         <!--should be a side bar later but for now just reviews-->
         <div class = "leftside">
-            <h2 id = "rstant_name">
+            <h1 id = "rstant_name" style="text-shadow: 2px 2px 5px grey;">
                 <?php
-                echo $query['name'];
+                echo $rows_res['name'];
                 ?>
             </h2>
-            <p>address here</p>
-            <!--Lists of sample reviews-->
-            <h3><em>Sample object reviews</em></h3>
-            <ul>
-                
-                <li><strong>4stars</strong>
-                    <p>Excellent service, great foods and good services. Only reason for stars 4 is because a food was served with a cold conditoin.</p>
-                </li>
-                <li><strong>5stars</strong>
-                    <p>Love all foods in this places! Friendly customer service. So good!</p>
-                </li>
-                <li><strong>3stars</strong>
-                    <p>Services was good but do not really like the flavour of those foods.</p>
-                </li>
-                <li><strong>1stars</strong>
-                    <p>Great foods but dishes are not cleaned well XD</p>
-                </li>
-                <li><strong>2stars</strong>
-                    <p>Customer did not leave any comments.</p>
-                </li>
-            </ul>
+            <p><?php
+                echo $rows_res['address'];
+                ?>
+            </p>
+            <table style="width:100%">
+              <tr>
+                <th>Latitude</th>
+                <th>Longitude</th>
+              </tr>
+              <tr>
+                <td id ="res_lat">
+                    <?php
+                    echo $rows_res['latitude'];
+                    ?>
+                </td>
+                <td id ="res_lng">
+                    <?php
+                    echo $rows_res['longitude'];
+                    ?>
+                </td>
+              </tr>
+            </table>
+            <p>-----------------------------</p>   
 
-            <video controls
-                width="250"
-                height="200"
-                muted>
-                <source src="images/video.webm"
-                        type="video/webm">
-                <source src="images/video.mp4"
-                        type="video/mp4">
-                This browser does not support the HTML5 video element.
-            </video>
+            <!--Lists of sample reviews-->
+            <h3><em>Reviews</em></h3>
+            
+            <p><?php
+                echo $rows_review['review'];
+                ?>
+            </p>
 
             <div class = "footer">
                 <p>Author: Run Zhang, Boming Jin &copy; 2021-10-08</p>
