@@ -87,7 +87,7 @@
                 echo $rows_res['address'];
                 ?>
             </p>
-            <table style="width:100%">
+            <table id = "rest_detail" style="width:100%">
               <tr>
                 <th>Latitude</th>
                 <th>Longitude</th>
