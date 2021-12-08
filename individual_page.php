@@ -117,24 +117,29 @@
                 ?>
             </p>
             
+            
             <p>-----------------------------</p>
 
+            <form id="reviews">
+            <textarea  rows="4" cols="40" placeholder="Write your review here..." id = "usertext"></textarea>
+
+            <br/>
+            <br/>
+            <button id = "submitreview" type = "button" onclick="updatereview()">Submit</button>
+            <br/>
+            <br/>
+            </form>
 
 
-            <textarea  rows="4" cols="40" placeholder="Write your review here..."></textarea>
-
-            <br/>
-            <br/>
-            <input type = "submit" value = "Submit">
-            <br/>
-            <br/>
             <div class = "footer">
                 <p>Author: Run Zhang, Boming Jin &copy; 2021-10-08</p>
             </div>
+            
+            <div id = "resid">
             <?php
                 echo $_GET['resturantId'];
             ?>
-
+            </div>
         </div>
 
         <div class = "rightside">

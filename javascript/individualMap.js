@@ -22,3 +22,28 @@ function initMap() {
         marker.addListener("mouseover", bounceanimation);
 }
 
+var updatereview =  function(){
+    let content = $('#usertext').val();
+    let name = $('#rstant_name').text();
+    let restid = $('#resid').text();
+    if (content == ''){
+        alert("input empty");
+        return false;
+    }
+    $.ajax({
+             type:"GET",
+             url:"/Toolman/review_data.php",
+             data: {'review': content, 'restaurant_name': name, 'rest_id': restid},
+             dataType: "html",
+             async : false,
+             success:function(result){
+                data = '';
+                data = eval("("+result+")");
+                $.each(data, function (i,item) {
+
+                })
+                $("#restaurant").html(resulthtml);
+                }
+
+        })
+}
