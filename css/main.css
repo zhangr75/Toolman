@@ -173,6 +173,14 @@ form{
 	animation-duration: 1s;
 	
 }
+
+.leftside table{
+	border: 1px solid black; 
+	width : 80%;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
 .leftside::-webkit-scrollbar {
   	display: none;
 }

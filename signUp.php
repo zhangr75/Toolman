@@ -84,7 +84,7 @@
                     <br/>
                     <input id = "userpw" type = "password" name = "Userpw">
                     <br/>
-                    <span class = "notice">*Text&numbers 8-32 long</span>
+                    <span class = "notice">*Text/numbers 8-32 long</span>
                     <br/>
                     <span id = "passErr" class="error"></span>
                     <br/>

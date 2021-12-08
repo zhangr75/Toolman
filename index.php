@@ -98,7 +98,7 @@
 
             <h3>Top 10 restaurant near you!</h3> 
             
-            <div id="restaurant">  
+            <div id="restaurant" >  
                 <!--<table id="result_table" style = "border: 1">
                     <tr>
                         <td></td>

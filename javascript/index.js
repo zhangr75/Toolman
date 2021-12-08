@@ -84,10 +84,16 @@ var showresult =  function(){
                 data = eval("("+result+")");
                 $.each(data, function (i,item) {
                         var itemid = item.id;
-                        var strlink = "individual_page.php?resturantId=" +itemid;
-                        resulthtml += "<table style = 'boarder: 1px'>" + "<tr><td style = 'text-align: center'>" + "<a href= '" + strlink + "'>" +  item.name + "</a>" +
-                                      "</tr><td>" + item.address + 
-                                      "</tr></td>" + "</table>" + "<img src=" + item.rest_imgurl + " width = '60%'>"             
+                        var strlink = "individual_page.php?resturantId=" + itemid;
+                        resulthtml += "<table>" + 
+                                        "<tr><th><h4>" + item.name + "</h4></th></tr>" +
+                                        "<tr><td>" + item.address + "</a>" + "</td></tr>" +
+                                      "</table>"
+                        if(item.rest_imgurl != ''){
+                            resulthtml += "<img src=" + item.rest_imgurl + " width = '60%' alt = 'Restaurant Image'>";
+                        }         
+                        resulthtml += "<br><cite><a href= " + strlink + ">" + item.name + "</cite>";     
+                                                  
                         la = item.latitude;
                         lo = item.longitude;
                         resultid = item.id;
