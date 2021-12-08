@@ -67,44 +67,55 @@
                                 $database = new Database();
                                 $db = $database->getConnection();
                                 $conn = $db['connection'];
-
+                                
+                                
 
                                 if($db['status'] == '0'){
                                     echo "Connection to database failed: " . $db['message'];
                                 }
                                 else{
                                     try{
-                                        $imageUrl = '';
-                                        if($_FILES['myfile']['name'] != ''){
-                                            //connect to the s3 and upload the files to s3
-                                            $s3 = S3Client::factory([
-                                                'region'  => 'ca-central-1',
-                                                'version' => 'latest',
-                                                'credentials' => [
-                                                    'key'    => "",
-                                                    'secret' => "",
-                                                ]
-                                            ]);		
-                                            
-                                            $s3Result = $s3->putObject([
-                                                'Bucket' => 'toolman',
-                                                'Key'    => $file_name,
-                                                'SourceFile' => $temp_file_location			
-                                            ]);
-                                            //Store the url of the image for showing on the page
-                                            $imageUrl = 'https://toolman.s3.ca-central-1.amazonaws.com/' . $file_name;
-                                        }
-                                        $query = "insert into `restaurants`(`name`, `latitude`, `longitude`, `address`, `rest_imgurl`, `id`) 
-                                        VALUES ('$newrestaurantName', '$newlatitude', '$newlongitude', '$newaddress', '$imageUrl', null)";
+                                        //check if the input of coordinates is already exist
+                                        $query = "SELECT `latitude`, `longitude` FROM `restaurants` WHERE `latitude` = '$newlatitude' AND `longitude` = '$newlongitude'";
                                         $request = $conn->prepare($query);
-                                        $result = $request->execute();
-
-                                        
-
+                                        $request->execute();
+                                        $result = $request->fetchAll(PDO::FETCH_ASSOC);
                                         if(!empty($result)){
-                                            $_SESSION['session_mess'] = 'Success on submission!';
+                                            $_SESSION['session_mess'] = 'Object alreayd exist, submit another';
                                             header('Location: /Toolman/submission.php');
-                                        }    
+                                        }
+                                        else{
+                                            $imageUrl = '';
+                                            if($_FILES['myfile']['name'] != ''){
+                                                //connect to the s3 and upload the files to s3
+                                                $s3 = S3Client::factory([
+                                                    'region'  => 'ca-central-1',
+                                                    'version' => 'latest',
+                                                    'credentials' => [
+                                                        'key'    => "",
+                                                        'secret' => "",
+                                                    ]
+                                                ]);		
+                                                
+                                                $s3Result = $s3->putObject([
+                                                    'Bucket' => 'toolman',
+                                                    'Key'    => $file_name,
+                                                    'SourceFile' => $temp_file_location			
+                                                ]);
+                                                //Store the url of the image for showing on the page
+                                                $imageUrl = 'https://toolman.s3.ca-central-1.amazonaws.com/' . $file_name;
+                                            }
+                                            $query = "insert into `restaurants`(`name`, `latitude`, `longitude`, `address`, `rest_imgurl`, `id`) 
+                                            VALUES ('$newrestaurantName', '$newlatitude', '$newlongitude', '$newaddress', '$imageUrl', null)";
+                                            $request = $conn->prepare($query);
+                                            $result = $request->execute();
+
+                                            if(!empty($result)){
+                                                $_SESSION['session_mess'] = 'Success on submission!';
+                                                header('Location: /Toolman/submission.php');
+                                            }    
+                                        }
+                                        
                                     }
                                     catch (Exception $e) {
                                         die("something went wrong".$e->getMessage());
