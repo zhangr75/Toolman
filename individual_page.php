@@ -104,6 +104,9 @@
             <div class = "footer">
                 <p>Author: Run Zhang, Boming Jin &copy; 2021-10-08</p>
             </div>
+            <?php
+                echo $_GET['resturantId'];
+            ?>
 
         </div>
 
