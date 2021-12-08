@@ -2,7 +2,10 @@
     //Database class for connect to the database
     include_once 'database.php';
     
-    $searchbox = $_GET["search"];
+    $review = $_GET["review"];
+    $restaurant_name = $_GET["restaurant_name"];
+    $rest_id = $_GET["rest_id"];
+
     $i = 0;
     //Connect to database by using PDO
     $database = new Database();
@@ -11,7 +14,7 @@
         echo "Connection to database failed: " . $db['message'];
     }else{
         try {
-            $query = "select * from restaurants where name ='$searchbox' ";
+            $query = "insert into review(id,restaurant_name,review,rest_id) VALUES (null, '$restaurant_name','$review','$rest_id')";
             $conn = $db['connection'];
             $request = $conn->prepare($query);
             $request->execute();
