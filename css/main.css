@@ -287,6 +287,10 @@ a:hover + #textbox {
 	
 }
 
+#rstant_name{
+	text-shadow: 2px 2px 5px grey;
+}
+
 #geolocation{
 	width: 100px;
 	height: 100px;
