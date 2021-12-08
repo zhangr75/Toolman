@@ -85,18 +85,17 @@ var showresult =  function(){
                 $.each(data, function (i,item) {
                         var itemid = item.id;
                         var strlink = "individual_page.php?resturantId=" +itemid;
-                        resulthtml += "<tr><td>" + "<a href= '" + strlink + "'>" +  item.name + "</a>" +
+                        resulthtml += "<table style = 'boarder: 1px'>" + "<tr><td style = 'text-align: center'>" + "<a href= '" + strlink + "'>" +  item.name + "</a>" +
                                       "</tr><td>" + item.address + 
-                                      "</tr></td>"
+                                      "</tr></td>" + "</table>" + "<img src=" + item.rest_imgurl + " width = '60%'>"             
                         la = item.latitude;
                         lo = item.longitude;
                         resultid = item.id;
                 })
-                $("#result_table").append(resulthtml);
+                $("#restaurant").html(resulthtml);
                 }
 
         })
-        
         var examplemarker = {
             lat: parseFloat(la), 
             lng: parseFloat(lo)

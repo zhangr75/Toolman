@@ -89,7 +89,7 @@
                                             if($_FILES['myfile']['name'] != ''){
                                                 //connect to the s3 and upload the files to s3
                                                 $s3 = S3Client::factory([
-                                                    'region'  => 'ca-central-1',
+                                                    'region'  => 'us-east-2',
                                                     'version' => 'latest',
                                                     'credentials' => [
                                                         'key'    => "",
@@ -98,12 +98,12 @@
                                                 ]);		
                                                 
                                                 $s3Result = $s3->putObject([
-                                                    'Bucket' => 'toolman',
+                                                    'Bucket' => 'toolmans',
                                                     'Key'    => $file_name,
                                                     'SourceFile' => $temp_file_location			
                                                 ]);
                                                 //Store the url of the image for showing on the page
-                                                $imageUrl = 'https://toolman.s3.ca-central-1.amazonaws.com/' . $file_name;
+                                                $imageUrl = 'https://toolmans.s3.us-east-2.amazonaws.com/' . $file_name;
                                             }
                                             $query = "insert into `restaurants`(`name`, `latitude`, `longitude`, `address`, `rest_imgurl`, `id`) 
                                             VALUES ('$newrestaurantName', '$newlatitude', '$newlongitude', '$newaddress', '$imageUrl', null)";
