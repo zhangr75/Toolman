@@ -37,7 +37,7 @@
 
         <!--External JavaScript file-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="javascript/individualMap.js"></script>
+        <script src="javascript/submissionpage.js"></script>
 
         <!--Set where the window should been opened when clicking hyperlink. Open the document in the same window-->
         <base target = "_self">
@@ -97,7 +97,7 @@
         </div>
 
         <div class = "rightside">
-            <div id="individualMap"></div>
+            <div id="map"></div>
             <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALMSVQoum8gtfksfpEQ4QcZvMqUt8Vez0&callback=initMap&libraries=&v=weekly"></script>
         </div>
 
