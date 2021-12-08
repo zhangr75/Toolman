@@ -14,6 +14,8 @@
     $newaddress = test_input($address);
     $newlatitude = test_input($latitude);
     $newlongitude = test_input($longitude);
+
+    
     
     if ($_SERVER["REQUEST_METHOD"] == "POST"){
         //check if loged in 
@@ -33,11 +35,29 @@
                             if(!preg_match('/^-?([0-9](\.\d+)?|[1-9][0-9](\.\d+)?|1[0-7][0-9](\.\d+)?|180\.?0*)$/', $newlongitude)){
                                 $_SESSION['session_mess'] = $_SESSION['session_mess'] . " Invalid longitude";
                             }
+                            if(!empty($_FILES['myfile'])){
+                                $file_name = $_FILES['myfile']['name'];   
+	                            $temp_file_location = $_FILES['myfile']['tmp_name'];
+                                $uploadOk = 1;
+                                $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+                                    
+                                //Check if it is real image
+                                if($check !== false) {
+                                    $_SESSION['session_mess'] = $_SESSION['session_mess'] . "File is an image - " . $check["mime"];
+                                    $uploadOk = 1;
+                                } 
+                                else{
+                                    echo "File is not an image.";
+                                    $uploadOk = 0;
+                                }
+                            }
+
                             if(!empty($_SESSION['session_mess'])){
                                 header('Location: /Toolman/submission.php');
                                 exit("Invalid Input(s)");
                             }
                             else{
+                                
                                 $database = new Database();
                                 $db = $database->getConnection();
                                 $conn = $db['connection'];

@@ -71,7 +71,7 @@
                 
                 <!--For future to post information to server sides-->
                 <div class = "InputBox">
-                    <form method = "post" action = "/Toolman/php/submissionHandle.php">
+                    <form method = "post" action = "/Toolman/php/submissionHandle.php" enctype="multipart/form-data">
                         <label for = "restaurantname">Restaurant Name</label>
                         <br/>
                         <input id = "restaurantname" type = "text" name = "restaurantName" pattern = "[0-9a-zA-Z ]+" required>

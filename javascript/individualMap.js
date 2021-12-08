@@ -69,5 +69,5 @@ var reviews =  function(){
         });
     marker.setAnimation(google.maps.Animation.DROP);
     marker.addListener("mouseover", bounceanimation);
-    **/
-}
+    
+}**/
