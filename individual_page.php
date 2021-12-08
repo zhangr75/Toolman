@@ -105,6 +105,7 @@
                 </td>
               </tr>
             </table>
+
             <p>-----------------------------</p>   
 
             <!--Lists of sample reviews-->

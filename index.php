@@ -98,19 +98,21 @@
 
             <h3>Top 10 restaurant near you!</h3> 
             
-            <div id="restaurant"></div>  
-                <table id="result_table" style = "border: 1">
+            <div id="restaurant">  
+                <!--<table id="result_table" style = "border: 1">
                     <tr>
-                        <td id = "jump"></td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td></td>
                     </tr>
-                </table>
+                </table> -->
             <br/>
 
+            <img id ="pics">
+
+            </div>
             <p>Sorry, there are no more restaurants nearby...</p>   
-                
                 
                 <div class="footer" style="bottom: 0;">
                     <p>Author: Run Zhang, Boming Jin &copy; 2021-10-08</p>

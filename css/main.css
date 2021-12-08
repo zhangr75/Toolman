@@ -86,6 +86,7 @@ form{
 	float:right;
 }
 
+
 .reg:hover{
 	animation: rubberBand;
   	animation-duration: 0.5s;
