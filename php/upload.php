@@ -18,8 +18,8 @@
 		// 	'region'  => 'ca-central-1',
 		// 	'version' => 'latest',
 		// 	'credentials' => [
-		// 		'key'    => "AKIA5LWSVAHKAM7T7DHW",
-		// 		'secret' => "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",
+		// 		'key'    => "",
+		// 		'secret' => "",
 		// 	]
 		// ]);		
 
