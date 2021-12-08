@@ -4,6 +4,10 @@
     include_once 'database.php';
     include_once 'hashPass.php';
 
+    //for s3 sdk things 
+    use Aws\S3\S3Client;
+    require './../vendor/autoload.php';
+
     $restaurantName = $_POST['restaurantName'];
     $address = $_POST['address'];
     $latitude = $_POST['latitude'];
@@ -35,20 +39,22 @@
                             if(!preg_match('/^-?([0-9](\.\d+)?|[1-9][0-9](\.\d+)?|1[0-7][0-9](\.\d+)?|180\.?0*)$/', $newlongitude)){
                                 $_SESSION['session_mess'] = $_SESSION['session_mess'] . " Invalid longitude";
                             }
-                            if(!empty($_FILES['myfile'])){
+                            if($_FILES['myfile']['name'] != ''){
+                                $target_file = basename($_FILES["myfile"]["name"]);
+                                $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
                                 $file_name = $_FILES['myfile']['name'];   
 	                            $temp_file_location = $_FILES['myfile']['tmp_name'];
-                                $uploadOk = 1;
-                                $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-                                    
+                                
+                                $check = getimagesize($_FILES["myfile"]["tmp_name"]);   
                                 //Check if it is real image
-                                if($check !== false) {
-                                    $_SESSION['session_mess'] = $_SESSION['session_mess'] . "File is an image - " . $check["mime"];
-                                    $uploadOk = 1;
-                                } 
-                                else{
-                                    echo "File is not an image.";
-                                    $uploadOk = 0;
+                                if($check === false){
+                                    $_SESSION['session_mess'] = $_SESSION['session_mess'] . "File is not an image.";
+                                }
+                                // Allow certain file formats
+                                if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+                                    && $imageFileType != "gif" ) {
+                                    $_SESSION['session_mess'] = $_SESSION['session_mess'] . "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
                                 }
                             }
 
@@ -61,14 +67,40 @@
                                 $database = new Database();
                                 $db = $database->getConnection();
                                 $conn = $db['connection'];
+
+
                                 if($db['status'] == '0'){
                                     echo "Connection to database failed: " . $db['message'];
                                 }
                                 else{
                                     try{
-                                        $query = "insert into `restaurants`(`name`, `latitude`, `longitude`, `address`,`id`) VALUES ('$newrestaurantName', '$newlatitude', '$newlongitude', '$newaddress', null)";
+                                        $imageUrl = '';
+                                        if($_FILES['myfile']['name'] != ''){
+                                            //connect to the s3 and upload the files to s3
+                                            $s3 = S3Client::factory([
+                                                'region'  => 'ca-central-1',
+                                                'version' => 'latest',
+                                                'credentials' => [
+                                                    'key'    => "",
+                                                    'secret' => "",
+                                                ]
+                                            ]);		
+                                            
+                                            $s3Result = $s3->putObject([
+                                                'Bucket' => 'toolman',
+                                                'Key'    => $file_name,
+                                                'SourceFile' => $temp_file_location			
+                                            ]);
+                                            //Store the url of the image for showing on the page
+                                            $imageUrl = 'https://toolman.s3.ca-central-1.amazonaws.com/' . $file_name;
+                                        }
+                                        $query = "insert into `restaurants`(`name`, `latitude`, `longitude`, `address`, `rest_imgurl`, `id`) 
+                                        VALUES ('$newrestaurantName', '$newlatitude', '$newlongitude', '$newaddress', '$imageUrl', null)";
                                         $request = $conn->prepare($query);
                                         $result = $request->execute();
+
+                                        
+
                                         if(!empty($result)){
                                             $_SESSION['session_mess'] = 'Success on submission!';
                                             header('Location: /Toolman/submission.php');
