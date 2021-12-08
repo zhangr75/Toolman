@@ -44,6 +44,28 @@
     </head>
 
     <body>
+        <?php 
+            //Database class for connect to the database
+            include_once '../Toolman/php/database.php';
+            
+            $id = $_GET['resturantId'];
+            //Connect to database by using PDO
+            $database = new Database();
+            $db = $database->getConnection();
+            if($db['status'] == '0'){
+                echo "Connection to database failed: " . $db['message'];
+            }else{
+                try {
+                    $query = "select * from restaurants where id ='$id' ";
+                    $conn = $db['connection'];
+                    $request = $conn->prepare($query);
+                    $request->execute();
+                }
+                catch (Exception $e) {
+                    die("something went wrong".$e->getMessage());
+                }
+            }
+        ?>
         <!--navigation menu temporarily set to navigate to main page-->
         <div class = "header">
             <div class = "navBar"> 
@@ -53,7 +75,11 @@
 
         <!--should be a side bar later but for now just reviews-->
         <div class = "leftside">
-            <h2>Sample object information</h2>
+            <h2 id = "rstant_name">
+                <?php
+                echo $query['name'];
+                ?>
+            </h2>
             <p>address here</p>
             <!--Lists of sample reviews-->
             <h3><em>Sample object reviews</em></h3>
