@@ -82,7 +82,7 @@
                 <?php
                 echo $rows_res['name'];
                 ?>
-            </h2>
+            </h1>
             <p><?php
                 echo $rows_res['address'];
                 ?>
@@ -107,6 +107,7 @@
             </table>
 
             <p>-----------------------------</p>   
+            </br>
 
             <!--Lists of sample reviews-->
             <h3><em>Reviews</em></h3>
@@ -115,7 +116,18 @@
                 echo $rows_review['review'];
                 ?>
             </p>
+            
+            <p>-----------------------------</p>
 
+
+
+            <textarea  rows="4" cols="40" placeholder="Write your review here..."></textarea>
+
+            <br/>
+            <br/>
+            <input type = "submit" value = "Submit">
+            <br/>
+            <br/>
             <div class = "footer">
                 <p>Author: Run Zhang, Boming Jin &copy; 2021-10-08</p>
             </div>
