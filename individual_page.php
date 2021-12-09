@@ -133,7 +133,7 @@
 
             <form id="reviews">
             <textarea  rows="4" cols="40" placeholder="Write your review here..." id = "usertext"></textarea>
-
+            <br/>
             <br/>
             <select id = "individualRate" name="rating" class="todrop">
                 <option selected disabled>Rating</option>
@@ -143,6 +143,7 @@
                 <option value="4star">4 star</option>
                 <option value="5star">5 star</option>
             </select>
+            <br/>
             <br/>
             <button id = "submitreview" type = "button" onclick="updatereview()">Submit</button>
             <br/>

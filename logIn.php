@@ -36,9 +36,6 @@
         <div class = "header">
             <div class = "navBar"> 
                 <a href = "index.php">To Main Page</a>
-                <a href = "index.php">Link2</a>
-                <a href = "index.php">Link3</a>
-                <a href = "index.php">Link4</a>
             </div>
         </div>
         <div class = "borderForInputs">
