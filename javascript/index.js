@@ -1,5 +1,5 @@
 var map, marker, infoWindow;  //variables to set up map and markers
-
+let markers = [];
 //Initialize the Google Map API
 function initMap() {
     //set up map object by initializing the zoom index and the position: lat, lag
@@ -54,23 +54,23 @@ function showposition(){
 // });
 
 
-
 var showresult =  function(){
+    if(markers.length !== 0){
+        initMap();
+        markers = [];
+    }
+    var position;
     var la, lo;
     var data ='';
     let name = $('#searchcontent').val();
-    if (name == ''){
-        alert("input empty");
-        return false;
-    }
+    let star = $('#star').val();
     $.ajax({
              type:"GET",
              url:"/Toolman/php/searchbox.php",
-             data: {"search": name},
+             data: {"search": name, "star": star},
              dataType: "html",
              async : false,
              success:function(result){
-                //$("#restaurant").html(result).show(); 
                 $("#result_table").empty();
                 var resulthtml = '';
                 var resultid = '';
@@ -96,7 +96,7 @@ var showresult =  function(){
 
         })
 
-    var markers = []; 
+    
     var bounds = new google.maps.LatLngBounds();
     for (var i = 0; i < data.length; i++){ 
         markers [i] = new google.maps.Marker({
@@ -104,43 +104,21 @@ var showresult =  function(){
         });
         var la = data[i].latitude;
         var lo = data[i].longitude;
-        var position = new google.maps.LatLng(la,lo);
+
+        position = new google.maps.LatLng(la,lo);
         markers[i].setPosition(position); 
         bounds.extend(markers[i].getPosition());
-    }
+    }   
+        if(markers.length > 1){
         map.setCenter(bounds.getCenter());
         map.fitBounds(bounds);
-        
-
-
-
-/**
-        for (var i = 0; i < jsondata.length; i++){
-            var data = jsondata[i]
-            marker = new google.maps.Marker({
-              position: new google.maps.LatLng(data.latitude,data.longitude),
-              map: map,
-              title: data.name
-            });
+        }else{
+            markers.setCenter(position);
+            markers.setZoom(6);
         }
-
-        
-        var examplemarker = {
-            lat: parseFloat(la), 
-            lng: parseFloat(lo)
-        };
-
-        marker.setPosition(myLatlng);//set the location of marker
-        map.setCenter(myLatlng, 9)//reset the centre of the map
-
-        google.maps.event.addListener(marker,'click', function() {
-            infoWindow.setContent(searchexample);
-            infoWindow.open(map, marker);
-            });
-        marker.setAnimation(google.maps.Animation.DROP);
-        marker.addListener("mouseover", bounceanimation);
-        **/
 }
+
+
 
 
 function bounceanimation() {
