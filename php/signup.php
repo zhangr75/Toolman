@@ -34,7 +34,6 @@
                 if(!preg_match('/^[a-zA-Z]{8,12}$/', $newsec_q)){
                     $response['response_status'] = '0';
                     $response['response_mess'] = $response['response_mess'] . " Invalid User Name";
-                    echo json_encode($newsec_q);
                 }
                 if(!empty($response['response_mess'])){
                     echo json_encode($response);

@@ -58,11 +58,11 @@
                 try {
                     $conn = $db['connection'];
                     $query_res = "select * from restaurants where id ='$id' ";
-                    $query_review = "select * from reviews where rest_id ='$id' ";
+                    $query_review = "select review from reviews where rest_id ='$id' ";
                     $request_res = $conn->query($query_res);
                     $request_review = $conn->query($query_review);
                     $rows_res = $request_res->fetch(PDO::FETCH_ASSOC);
-                    $rows_review = $request_review->fetch(PDO::FETCH_ASSOC);
+                    $rows_review = $request_review->fetchAll(PDO::FETCH_ASSOC);
                 }
                 catch (Exception $e) {
                     die("something went wrong".$e->getMessage());
@@ -78,15 +78,8 @@
 
         <!--should be a side bar later but for now just reviews-->
         <div class = "leftside">
-            <h1 id = "rstant_name" style="text-shadow: 2px 2px 5px grey;">
-                <?php
-                echo $rows_res['name'];
-                ?>
-            </h1>
-            <p><?php
-                echo $rows_res['address'];
-                ?>
-            </p>
+            <h1 id = "rstant_name" style="text-shadow: 2px 2px 5px grey;"><?php echo $rows_res['name'];?></h1>
+            <p><?php echo $rows_res['address'];?></p>
             <table id = "rest_detail" style="width:100%">
               <tr>
                 <th>Latitude</th>
@@ -112,13 +105,27 @@
             <!--Lists of sample reviews-->
             <h3><em>Reviews</em></h3>
             
-            <p><?php
-                echo $rows_review['review'];
+            <p id = "restaurant_reviews" style = "max-width: 100%"><?php
+            if(!empty($rows_review)){
+                foreach($rows_review as $row => $reviews){
+                echo "<br/>" . $reviews['review'] . "<br/>";
+                }
+            }
+            
+                
                 ?>
             </p>
             
             
             <p>-----------------------------</p>
+
+             <!--Showing message-->
+            <div id = "alrt" class="alert alert-success" role="alert" style = "display:none; text-align: center">
+                <p class = "title m-0"></p>
+            </div>
+            <div id = "alrtdanger" class="alert alert-danger" role="alert" style = "display:none; text-align: center">
+                <p class = "title m-0"></p>
+            </div>
 
             <form id="reviews">
             <textarea  rows="4" cols="40" placeholder="Write your review here..." id = "usertext"></textarea>
@@ -135,11 +142,6 @@
                 <p>Author: Run Zhang, Boming Jin &copy; 2021-10-08</p>
             </div>
             
-            <div id = "resid">
-            <?php
-                echo $_GET['resturantId'];
-            ?>
-            </div>
         </div>
 
         <div class = "rightside">
