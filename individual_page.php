@@ -59,7 +59,7 @@
                     $conn = $db['connection'];
                     $query_res = "select * from restaurants where id ='$id' ";
                     $query_review = "select review from reviews where rest_id ='$id' ";
-                    $query_rate = "select rate from reviews where rest_id ='$newrest_id'";
+                    $query_rate = "select rate from reviews where rest_id ='$id'";
                     $request_rate = $conn->query($query_rate);
                     $request_res = $conn->query($query_res);
                     $request_review = $conn->query($query_review);
@@ -112,6 +112,10 @@
                 if(!empty($rows_review)){
                     foreach($rows_review as $row => $reviews){
                     echo "<br/>" . $reviews['review'] . "<br/>";
+                    }
+                if(!empty($rows_rate))
+                    foreach($rows_rate as $row => $rates){
+                        echo "<br/>" . $rates['rate'] . "<br/>";
                     }
                 }
                 else{
