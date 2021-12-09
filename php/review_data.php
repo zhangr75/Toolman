@@ -7,6 +7,7 @@
     $review = $_GET["review"];
     $restaurant_name = $_GET["restaurant_name"];
     $rest_id = $_GET["rest_id"];
+    $rate = $_GET["rate"];
 
     //validate the input
     $newreview = test_input($review);
@@ -44,20 +45,27 @@
                                     }
                                     else{
                                         //inserting the reviews
-                                        $query = "insert into reviews(id,restaurant_name,review,rest_id) VALUES (null, '$restaurant_name','$newreview','$newrest_id')";
+                                        $query = "insert into reviews(id,restaurant_name,review,rest_id, rate) VALUES (null, '$restaurant_name','$newreview','$newrest_id','$rate')";
                                         $request = $conn->prepare($query);
                                         $result = $request->execute();
 
                                         //select reviews for current restaurant
-                                        $query_review = "select review from reviews where rest_id ='$newrest_id' ";
+                                        $query_review = "select review from reviews where rest_id ='$newrest_id'";
                                         $request_review = $conn->query($query_review);
                                         $request_review->execute();
                                         $rows_review = $request_review->fetchAll(PDO::FETCH_ASSOC);
+                                        $query_rate = "select rate from reviews where rest_id ='$newrest_id'";
+                                        $request_rate = $conn->query($query_rate);
+                                        $request_rate->execute();
+                                        $rows_rate = $request_rate->fetchAll(PDO::FETCH_ASSOC);
+
+
                                         if(!empty($result)){
                                             $response['response_status'] = '1';
                                             $response['response_mess'] = 'Success!';
                                             //give the query result back to the ajax for partially change the page
                                             $response['rest_reviews'] = $rows_review;
+                                            $response['rest_rates'] = $rows_rate;
                                             echo json_encode($response);
                                         }
                                     }

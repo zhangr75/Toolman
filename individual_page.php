@@ -59,10 +59,13 @@
                     $conn = $db['connection'];
                     $query_res = "select * from restaurants where id ='$id' ";
                     $query_review = "select review from reviews where rest_id ='$id' ";
+                    $query_rate = "select rate from reviews where rest_id ='$newrest_id'";
+                    $request_rate = $conn->query($query_rate);
                     $request_res = $conn->query($query_res);
                     $request_review = $conn->query($query_review);
                     $rows_res = $request_res->fetch(PDO::FETCH_ASSOC);
                     $rows_review = $request_review->fetchAll(PDO::FETCH_ASSOC);
+                    $rows_rate = $request_rate->fetchAll(PDO::FETCH_ASSOC);
                 }
                 catch (Exception $e) {
                     die("something went wrong".$e->getMessage());
@@ -131,6 +134,14 @@
             <textarea  rows="4" cols="40" placeholder="Write your review here..." id = "usertext"></textarea>
 
             <br/>
+            <select id = "individualRate" name="rating" class="todrop">
+                <option selected disabled>Rating</option>
+                <option value="1star">1 star</option>
+                <option value="2star">2 star</option>
+                <option value="3star">3 star</option>
+                <option value="4star">4 star</option>
+                <option value="5star">5 star</option>
+            </select>
             <br/>
             <button id = "submitreview" type = "button" onclick="updatereview()">Submit</button>
             <br/>

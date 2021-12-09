@@ -80,13 +80,13 @@ var showresult =  function(){
                         var strlink = "individual_page.php?resturantId=" + itemid;
                         resulthtml += "<table>" + 
                                         "<tr><th><h4>" + item.name + "</h4></th></tr>" +
-                                        "<tr><td>" + item.address + "</a>" + "</td></tr>" +
-                                      "</table>"
+                                        "<tr><td>" + item.address + + "</td></tr>" +
+                                        "<tr><td>" + "<cite><a href= " + strlink + ">" + item.name + "</a></cite>" + "</td></tr>";
+                                      
                         if(item.rest_imgurl != ''){
-                            resulthtml += "<img src=" + item.rest_imgurl + " width = '60%' alt = 'Restaurant Image'>";
+                            resulthtml += "<tr><td><img src=" + item.rest_imgurl + " width = '60%' alt = 'Restaurant Image'></td></tr>";
                         }         
-                        resulthtml += "<br><cite><a href= " + strlink + ">" + item.name + "</cite>";     
-                                                  
+                        resulthtml += "</table>"              
                         la = item.latitude;
                         lo = item.longitude;
                         resultid = item.id;
