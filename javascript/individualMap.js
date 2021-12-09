@@ -27,7 +27,6 @@ var updatereview =  function(){
     let name = $('#rstant_name').text();
     let searchParams = new URLSearchParams(window.location.search);
     let restid = searchParams.get('resturantId');
-    let rate = $('individualRate').val();
     // if (content == ''){
     //     alert("input empty");
     //     return false;
@@ -35,7 +34,7 @@ var updatereview =  function(){
     $.ajax({
             type:"GET",
             url:"/Toolman/php/review_data.php",
-            data: {'review': content, 'restaurant_name': name, 'rest_id': restid, 'rate': rate},
+            data: {'review': content, 'restaurant_name': name, 'rest_id': restid},
             async : false,
             success:function(result){
                var data = JSON.parse(result);
