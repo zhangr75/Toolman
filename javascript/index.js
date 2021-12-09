@@ -3,16 +3,9 @@ var map, marker, infoWindow;  //variables to set up map and markers
 //Initialize the Google Map API
 function initMap() {
     //set up map object by initializing the zoom index and the position: lat, lag
-    map = new google.maps.Map(document.getElementById("map"),{
+        map = new google.maps.Map(document.getElementById("map"),{
         zoom: 13, 
         center: {lat:43.24458199937876,  lng: -79.87154251830432}});
-
-        infoWindow = new google.maps.InfoWindow;
-
-        //set up marker object
-        marker = new google.maps.Marker({
-            map: map,
-        });
 }
 
     
@@ -64,6 +57,7 @@ function showposition(){
 
 var showresult =  function(){
     var la, lo;
+    var data ='';
     let name = $('#searchcontent').val();
     if (name == ''){
         alert("input empty");
@@ -80,7 +74,6 @@ var showresult =  function(){
                 $("#result_table").empty();
                 var resulthtml = '';
                 var resultid = '';
-                data = '';
                 data = eval("("+result+")");
                 $.each(data, function (i,item) {
                         var itemid = item.id;
@@ -102,13 +95,43 @@ var showresult =  function(){
                 }
 
         })
+
+    var markers = []; 
+    var bounds = new google.maps.LatLngBounds();
+    for (var i = 0; i < data.length; i++){ 
+        markers [i] = new google.maps.Marker({
+        map: map,
+        });
+        var la = data[i].latitude;
+        var lo = data[i].longitude;
+        var position = new google.maps.LatLng(la,lo);
+        markers[i].setPosition(position); 
+        bounds.extend(markers[i].getPosition());
+    }
+        map.setCenter(bounds.getCenter());
+        map.fitBounds(bounds);
+        
+
+
+
+/**
+        for (var i = 0; i < jsondata.length; i++){
+            var data = jsondata[i]
+            marker = new google.maps.Marker({
+              position: new google.maps.LatLng(data.latitude,data.longitude),
+              map: map,
+              title: data.name
+            });
+        }
+
+        
         var examplemarker = {
             lat: parseFloat(la), 
             lng: parseFloat(lo)
         };
 
-        marker.setPosition(examplemarker);//set the location of marker
-        map.setCenter(examplemarker, 9)//reset the centre of the map
+        marker.setPosition(myLatlng);//set the location of marker
+        map.setCenter(myLatlng, 9)//reset the centre of the map
 
         google.maps.event.addListener(marker,'click', function() {
             infoWindow.setContent(searchexample);
@@ -116,28 +139,7 @@ var showresult =  function(){
             });
         marker.setAnimation(google.maps.Animation.DROP);
         marker.addListener("mouseover", bounceanimation);
-
-    /**
-    var searchexample = 
-                '<div class="info_content">' +
-                '<h3>So yummy</h3>' +
-                '<a href = "individual_sample.html"><u>More info</u></a>' +
-                '</div>';
-
-    var examplemarker = {
-        lat: 43.25875194676521, 
-        lng: -79.84498643707694
-    };
-    marker.setPosition(examplemarker);//set the location of marker
-    map.setCenter(examplemarker, 9)//reset the centre of the map
-
-    google.maps.event.addListener(marker,'click', function() {
-        infoWindow.setContent(searchexample);
-        infoWindow.open(map, marker);
-        });
-    marker.setAnimation(google.maps.Animation.DROP);
-    marker.addListener("mouseover", bounceanimation);
-    **/
+        **/
 }
 
 
