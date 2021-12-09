@@ -28,6 +28,6 @@ we prepopulated 5 restraurants in the databse for searching, whcih are "soyummy,
 
 For individual object page reviews, coords, marker will showed properly, users could submit the review on the same page at the end of the leftside. Success messages or fail messages will showed after submission. Used ajax to render the page partially.
 
-On the submission page, only logged in user could sbumit new object, user could submit image to the S3 bucket.
+On the submission page, only logged in user could sbumit new object, user could submit image to the S3 bucket. Right click will choose the coordinate on the map directly(the coords will auto filled in the proper input).
 
 For registration page, usre could sign up or log in in the different page, and message will show if the action is success or fail.
