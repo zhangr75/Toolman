@@ -76,7 +76,7 @@
         <div id="searchbox">
         <form id = "searchform">
             <input type="text" id = "searchcontent" class ="tosearch" placeholder="Restaurant..." name = "search">
-            <select name="rating" class="todrop">
+            <select name="rating" id ="star" class="todrop">
                 <option selected disabled>Rating</option>
                 <option value="1star">1 star</option>
                 <option value="2star">2 star</option>
