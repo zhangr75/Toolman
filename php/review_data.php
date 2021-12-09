@@ -32,7 +32,7 @@
                                 try {
                                     //check if we have this restaurant in our db
                                     $conn = $db['connection'];
-                                    $query = "select restaurant_name from reviews where rest_id = '$newrest_id' and restaurant_name = '$restaurant_name'";
+                                    $query = "select restaurant_name from restaurants  where rest_id = '$newrest_id' and restaurant_name = '$restaurant_name'";
                                     $request = $conn->prepare($query);
                                     $request->execute();
                                     $result = $request->fetchAll(PDO::FETCH_ASSOC);
