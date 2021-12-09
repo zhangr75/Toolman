@@ -25,26 +25,39 @@ function initMap() {
 var updatereview =  function(){
     let content = $('#usertext').val();
     let name = $('#rstant_name').text();
-    let restid = $('#resid').text();
-    //alert(name);
-    if (content == ''){
-        alert("input empty");
-        return false;
-    }
+    let searchParams = new URLSearchParams(window.location.search);
+    let restid = searchParams.get('resturantId');
+    // if (content == ''){
+    //     alert("input empty");
+    //     return false;
+    // }
     $.ajax({
-             type:"GET",
-             url:"/Toolman/php/review_data.php",
-             data: {'review': content, 'restaurant_name': name, 'rest_id': restid},
-             dataType: "html",
-             async : false,
-             success:function(result){
-                data = '';
-                data = eval("("+result+")");
-                $.each(data, function (i,item) {
-
-                })
-                $("#restaurant").html(resulthtml);
-                }
-
-        })
-}
+            type:"GET",
+            url:"/Toolman/php/review_data.php",
+            data: {'review': content, 'restaurant_name': name, 'rest_id': restid},
+            async : false,
+            success:function(result){
+               var data = JSON.parse(result);
+               if(data.response_status == '0'){
+                   $("#alrtdanger").fadeIn("slow").delay(1500).fadeOut(700);
+                   $('#alrtdanger .title').html(data.response_mess);
+                   
+               }
+               else{
+                   var resulthtml = "";
+                   $("#alrt").fadeIn("slow").delay(1500).fadeOut(700);
+                   $('#alrt .title').html(data.response_mess);
+                   if(data.rest_reviews != ''){
+                       
+                        $.each(data.rest_reviews, function(i){
+                            $.each(data.rest_reviews[i], function(key, value){
+                                resulthtml += ("<br/>" + value + "<br/>");
+                            })
+                        });
+                        $("#restaurant_reviews").html(resulthtml);
+                    }
+                    
+               }
+            }
+        });
+    }
