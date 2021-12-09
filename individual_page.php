@@ -104,18 +104,18 @@
 
             <!--Lists of sample reviews-->
             <h3><em>Reviews</em></h3>
-            
-            <p id = "restaurant_reviews" style = "max-width: 100%"><?php
-            if(!empty($rows_review)){
-                foreach($rows_review as $row => $reviews){
-                echo "<br/>" . $reviews['review'] . "<br/>";
+
+                <p id = "restaurant_reviews" style = "margin-left: 15%; margin-right: 15%;width:70%; word-wrap: break-word;"><?php
+                if(!empty($rows_review)){
+                    foreach($rows_review as $row => $reviews){
+                    echo "<br/>" . $reviews['review'] . "<br/>";
+                    }
                 }
-            }
-            
-                
-                ?>
-            </p>
-            
+                else{
+                    echo "<br/>No reviews right now, add some now!<br/>";
+                }?>
+                </p>
+
             
             <p>-----------------------------</p>
 
