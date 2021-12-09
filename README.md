@@ -23,3 +23,4 @@ Also, S3 bucket is working properly, and we put images into the bucket and store
 Instructions:
 
 we prepopulated 5 restraurants in the databse for searching, whcih are "soyummy, Coco milktea, The Ship, The Alley, August 8". Users should input exact name or rate of restaurants for searching restaurants properly. If want to search based on rate, then do not enter anything into input box. One/Multiple restaurants will all showed on the left side of the page(include one image if they uploaded for that restaurant), and markers will showed up on the map.
+

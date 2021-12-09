@@ -59,13 +59,10 @@
                     $conn = $db['connection'];
                     $query_res = "select * from restaurants where id ='$id' ";
                     $query_review = "select review from reviews where rest_id ='$id' ";
-                    $query_rate = "select rate from reviews where rest_id ='$id'";
-                    $request_rate = $conn->query($query_rate);
                     $request_res = $conn->query($query_res);
                     $request_review = $conn->query($query_review);
                     $rows_res = $request_res->fetch(PDO::FETCH_ASSOC);
                     $rows_review = $request_review->fetchAll(PDO::FETCH_ASSOC);
-                    $rows_rate = $request_rate->fetchAll(PDO::FETCH_ASSOC);
                 }
                 catch (Exception $e) {
                     die("something went wrong".$e->getMessage());
