@@ -105,8 +105,8 @@
                                                 //Store the url of the image for showing on the page
                                                 $imageUrl = 'https://toolmans.s3.us-east-2.amazonaws.com/' . $file_name;
                                             }
-                                            $query = "insert into `restaurants`(`name`, `latitude`, `longitude`, `address`, `rest_imgurl`, `id`) 
-                                            VALUES ('$newrestaurantName', '$newlatitude', '$newlongitude', '$newaddress', '$imageUrl', null)";
+                                            $query = "insert into `restaurants`(`name`, `latitude`, `longitude`, `address`, `rest_imgurl`, `id`,`rate`) 
+                                            VALUES ('$newrestaurantName', '$newlatitude', '$newlongitude', '$newaddress', '$imageUrl', null,null)";
                                             $request = $conn->prepare($query);
                                             $result = $request->execute();
 
